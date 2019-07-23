@@ -1,5 +1,3 @@
-README.md
-
 # BCX-NHAS-1808 非同质数字资产标准 和世界观系统 v1.0  
 
 1. 前言	1
@@ -37,9 +35,9 @@ I
 4.2.2. 道具在世界中穿越并做数值联动	15
 5. 常见问题 FAQ	17
 
-- [1. 前言](#1. 前言)
-  * [1.1. 介绍](#1.1. 介绍)
-  * [1.2. 编写目的](#1.2. 编写目的)
+- [aaa](#aaa)
+  * [介绍](#介绍)
+  * [编写目的](#编写目的)
   * [Easy Upgrades and Bug Recovery](#easy-upgrades-and-bug-recovery)
   * [Low Latency](#low-latency)
   * [Sequential Performance](#sequential-performance)
@@ -93,10 +91,16 @@ I
 
 
 
-#1. 前言
+# 前言
 
 fnuqadh
 
 
-#1.1. 介绍  
-#1.2. 编写目的
+# aaa
+
+grdg
+# 1.2. 编写目的
+
+gfedsgd
+
+# Easy Upgrades and Bug Recovery
