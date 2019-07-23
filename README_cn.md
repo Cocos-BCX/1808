@@ -209,7 +209,8 @@
 
   与传统游戏行业的概念不同，BCX 的区块链游戏并非完全相互独立的业务场景，每一个链游戏 可认为是一个游戏世界，而数个具有相似基本设定的游戏世界组合在一起即可以认为这几个游戏世 界拥有一个共同的世界观。  
   
-![图5](https://github.com/chandlerette/1808/blob/master/readmeimg/5.jpg)
+![图5](https://github.com/chandlerette/1808/blob/master/readmeimg/5.jpg)  
+
   世界观这一概念并非区块链游戏首创，现代游戏行业已经有许多游戏具备了这一特性，例如 《魔兽争霸》、《魔兽世界》、《炉石传说》、《风暴传说》拥有共同的暴雪宇宙世界观，其中有 相当部分的游戏道具、角色、资产是共通的，虽然这些资产在各自的游戏中有不同的具体属性、技 能等解释，但这些资产的设计基础源于共同的基本规则。  
   
   区块链游戏的世界观是一种用于区分游戏故事设定、角色/道具/规则设定和效用范围的标识。游 戏道具在世界观中遵循统一的世界规范，能够通过支付迁移费用在本世界观下的不同游戏世界中迁 移，即游戏道具的“穿越”。  
@@ -222,7 +223,7 @@
   
   可扩展的自定义数据能够让游戏设计者创造各具特色的游戏资产，互不干涉的域数据设计让游 戏资产在“穿越”世界、宇宙时允许被赋予不受干扰的全新属性，同时也为游戏间数据联动（例如 技能增益/减益）设计提供了可能，下图将是一个链上游戏资产在穿越世界线/平行世界的示例：  
   
-![图6](https://github.com/chandlerette/1808/blob/master/readmeimg/6.jpg)
+![图6](https://github.com/chandlerette/1808/blob/master/readmeimg/6.jpg)  
 
   根据游戏运营设计，1808 标准非同质资产支持通过特定的第三方有偿穿越世界线的设计，这一 机制有助于游戏运营在道具平衡性和资产流通量控制上作出符合需求的设计。  
   
@@ -344,7 +345,7 @@ end
 
 ### 租赁
 
-![图7](https://github.com/chandlerette/1808/blob/master/readmeimg/7.jpg)
+![图7](https://github.com/chandlerette/1808/blob/master/readmeimg/7.jpg)  
 
 合约设计：  
 * 定义发起租赁、转移使用权、收回使用权、库存状态查询、库存更新等租赁业务各流程的函数。  
@@ -358,7 +359,7 @@ end
 
 ### 抵押
 
-![图8](https://github.com/chandlerette/1808/blob/master/readmeimg/8.jpg)
+![图8](https://github.com/chandlerette/1808/blob/master/readmeimg/8.jpg)  
 
 合约设计：  
 * 定义发起抵押、转移所有权、收回使用权、抵押品状态查询、设置可抵押清单等抵押业务 各流程的函数；  
@@ -371,7 +372,7 @@ end
 
 ### 典当
 
-![图9](https://github.com/chandlerette/1808/blob/master/readmeimg/9.jpg)
+![图9](https://github.com/chandlerette/1808/blob/master/readmeimg/9.jpg)  
 
 合约设计： 
 * 定义发起典当、转移使用权、收回所有权、当品状态查询、设置典当清单等典当业务各流 程的函数；  
