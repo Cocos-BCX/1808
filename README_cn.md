@@ -1,8 +1,5 @@
 # BCX-NHAS-1808 非同质数字资产标准 和世界观系统 v1.0  
 
-1. 前言	1
-1.1. 介绍	1
-1.2. 编写目的	1
 1.3. BCX-NHAS-1808 标准	2
 1.3.1. 1808 标准的特性	2
 泛用的唯一价值表达	2
@@ -35,10 +32,10 @@ I
 4.2.2. 道具在世界中穿越并做数值联动	15
 5. 常见问题 FAQ	17
 
-- [1. 前言](#1. 前言)
-  * [1.1. 介绍](#1.1. 介绍)
-  * [1.2. 编写目的](#1.2. 编写目的)
-  * [Easy Upgrades and Bug Recovery](#easy-upgrades-and-bug-recovery)
+- [前言](#前言)
+  * [介绍](#介绍)
+  * [1.2 编写目的](1.2-编写目的)
+  * [1808 标准的特性](#1808-标准的特性)
   * [Low Latency](#low-latency)
   * [Sequential Performance](#sequential-performance)
   * [Parallel Performance](#parallel-performance)
