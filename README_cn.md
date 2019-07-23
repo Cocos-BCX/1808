@@ -35,9 +35,9 @@ I
 4.2.2. 道具在世界中穿越并做数值联动	15
 5. 常见问题 FAQ	17
 
-- [aaa](#aaa)
-  * [介绍](#介绍)
-  * [编写目的](#编写目的)
+- [1. 前言](#1. 前言)
+  * [1.1. 介绍](#1.1. 介绍)
+  * [1.2. 编写目的](#1.2. 编写目的)
   * [Easy Upgrades and Bug Recovery](#easy-upgrades-and-bug-recovery)
   * [Low Latency](#low-latency)
   * [Sequential Performance](#sequential-performance)
@@ -91,12 +91,12 @@ I
 
 
 
-# 前言
+# 1. 前言
 
 fnuqadh
 
 
-# aaa
+# 1.1. aaa
 
 grdg
 # 1.2. 编写目的
