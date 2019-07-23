@@ -104,7 +104,9 @@
   代表应用：War of Crypto.  
 * ERC-998  
   由 Matt Lockyer 提出的一种在以太坊的智能合约中定义的可组合非同质代币标准(CNFT, Composable NFTs) 。   
+  
 图~~~  
+
   图 1-3-1 是上述三种非同质资产标准与 1808 标准的对比图，该图就非同质资产在链和游戏上可 能涉及的要点作了简单对比，其中红色的差异部分正是 COCOS-BCX 针对链上游戏运行需求对 1808 标 准设计的特性，这些特性除了与 BCX 链网络自身的特性有关外，也与 1808 标准资产的数据结构设计有关。  
 ### 1808 标准数据结构
 
@@ -118,6 +120,17 @@
 
   表 1-3-1是本标准定义的非同质数字资产固有数据区域各字段类型和标识对照表。 
   
+ 项名称 | 基础标识  | 数据类型
+ ---- | ----- | ------  
+ 资产 id | nh_asset_id | asset_id_type  
+ 世界观申明 | world_view | world_view_type  
+ 所有者 | nh_asset_owner | account_id_type 
+ 制作者 | nh_asset_creator | account_id_type 
+ 制作时间 | nh_asset_create_time | time_point_sec 
+ 资产基本描述 | nh_asset_description | string 
+ 使用权名单 | limit_list | string vector<contract_id_type>
+ 使用权名单模式 | limit_type | nh_asset_lease_limit_type
+
   `nh_asset_id` 字段类型为 nh_asset_id_type，该类型的设计原则为保持网络中的唯一性即可，对 ID 长度没有硬性要求，但从多网络兼容性考虑，ID 的最大样本数量应能够覆盖现有各式去中心分布记 账式网络中的非同质数字资产实例的最大预期数量，例如以太坊网络中的资产 ID 为 40 字节长度的 HASH 地址，可支持的最大样本数为 1.462*10^48 个，则在应用此标准的网络中设计此资产 ID 时应 考虑使用样本容量大于该数值的 hash地址或其他唯一标识方式；   
   
   `world_view` 字段类型为 world_view_type，包含此资产适用的世界观 ID 与该世界观对应的世界流 通货币，其中世界观 ID 为网络唯一标识，流通货币为该货币的唯一符号（使用符号作为唯一凭证的 网络）或地址（使用地址作为唯一凭证的网络）； 
@@ -132,8 +145,17 @@
   
  `limit_type` 字段类型为 nh_asset_lease_limit_type，是使用权名单模式的模式枚举，包含白名单模 式和黑名单模式两种状态。   
  
-  表 1-3-2是本标准定义的非同质数字资产扩展数据区域各字段类型和标识对照表。   
+  表 1-3-2是本标准定义的非同质数字资产扩展数据区域各字段类型和标识对照表。 
   
+  项名称 | 扩展区标识  | 数据类型
+ ---- | ----- | ------  
+组合关系数据 | mod_data | list<parents>, list<children> 
+域数据列表 | describe_with_contract | map<contract_id_type, Map>   
+域标识 | session_key | contract_id_type 
+域数据 | session_data | map<string, string> 
+域内键 | inner_key | string  
+域内值 | inner_value| string   
+
   `Mod_data` 字段类型为 id 列表，是一个由标识父级资产 ID 和子级资产 ID 列表组成的关系表，用 于描述不同业务实体中资产的组合、嵌套关系；   
   
   `describe_with_contract` 字段类型为 map<contract_id_type, Map>，是一个由域标识和域数据组成的键值对映射表，其中域标识为业务实体的类型标记，对应一个或若干合约，该业务对此资产实例的 所有数据交互将在此区域内进行；   
