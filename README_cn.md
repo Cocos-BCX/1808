@@ -80,7 +80,7 @@
 
 #### 在链内将资产作为镶嵌品或模块组合使用
 
-![图1](https://github.com/chandlerette/1808/blob/master/readmeimg/1.jpg)
+![图1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1.jpg)
 
   以游戏为例，装备道具可能是由更多的组件、物品组合而成的，因此区块链游戏的非同质数字 资产也应该具备能够嵌套包含的特性。这一情况下每一个非同质资产都可以由多个非同质资产组 成，父级资产可以包含一个或多个子级资产，子级资产又可以包含其他的子级资产。   
   
@@ -90,7 +90,7 @@
 
   未来资产在链上的市场行为将远不限于传统的交易和流通，因此势必需要为更加丰富的业务类 型打好基础。Cocos-BCX在设计时细化了资产的权限系统，将资产的使用权与所有权进行了划分。   
   
-  ![图2](https://github.com/chandlerette/1808/blob/master/readmeimg/2.jpg)
+  ![图2](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/2.jpg)
   
   1808 标准数字资产的权属设计包含使用权和所有权两部分，两者的权限相互分离又有所关联。 使用权决定用户是否具备资产的大部分操作权限，而所有权决定用户是否具备资产的实际归属权和 关键操作权，并且特定操作在进行时可能需要所有者与使用者共同授权才可进行。   
 配合链系统对相关权属操作的细化，1808 标准数字资产能够支持传统链/合约系统无法做到的业 务逻辑，例如：资产租赁、抵押、典当等。  
@@ -107,12 +107,12 @@
 * ERC-998  
   由 Matt Lockyer 提出的一种在以太坊的智能合约中定义的可组合非同质代币标准(CNFT, Composable NFTs) 。   
   
-  ![图3](https://github.com/chandlerette/1808/blob/master/readmeimg/3.png)
+  ![图3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3.png)
 
   图 1-3-1 是上述三种非同质资产标准与 1808 标准的对比图，该图就非同质资产在链和游戏上可 能涉及的要点作了简单对比，其中红色的差异部分正是 COCOS-BCX 针对链上游戏运行需求对 1808 标 准设计的特性，这些特性除了与 BCX 链网络自身的特性有关外，也与 1808 标准资产的数据结构设计有关。  
 ### 1808 标准数据结构
 
-![图4](https://github.com/chandlerette/1808/blob/master/readmeimg/4.png)
+![图4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4.png)
 
   如上图所示，1808 标准非同质资产的数据结构分为两个基本功能区：固有数据区域用来存储非 同质数字资产的基本信息，分为资产 ID、世界观申明以及基础数据区域三段；扩展数据区域是为非 同质数字资产属性扩展专门设计的功能性数据区域，包括组合关系数据和域数据两部分。   
   
@@ -208,7 +208,7 @@
 
   与传统游戏行业的概念不同，BCX 的区块链游戏并非完全相互独立的业务场景，每一个链游戏 可认为是一个游戏世界，而数个具有相似基本设定的游戏世界组合在一起即可以认为这几个游戏世 界拥有一个共同的世界观。  
   
-![图5](https://github.com/chandlerette/1808/blob/master/readmeimg/5.jpg)  
+![图5](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/5.jpg)  
 
   世界观这一概念并非区块链游戏首创，现代游戏行业已经有许多游戏具备了这一特性，例如 《魔兽争霸》、《魔兽世界》、《炉石传说》、《风暴传说》拥有共同的暴雪宇宙世界观，其中有 相当部分的游戏道具、角色、资产是共通的，虽然这些资产在各自的游戏中有不同的具体属性、技 能等解释，但这些资产的设计基础源于共同的基本规则。  
   
@@ -222,7 +222,7 @@
   
   可扩展的自定义数据能够让游戏设计者创造各具特色的游戏资产，互不干涉的域数据设计让游 戏资产在“穿越”世界、宇宙时允许被赋予不受干扰的全新属性，同时也为游戏间数据联动（例如 技能增益/减益）设计提供了可能，下图将是一个链上游戏资产在穿越世界线/平行世界的示例：  
   
-![图6](https://github.com/chandlerette/1808/blob/master/readmeimg/6.jpg)  
+![图6](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/6.jpg)  
 
   根据游戏运营设计，1808 标准非同质资产支持通过特定的第三方有偿穿越世界线的设计，这一 机制有助于游戏运营在道具平衡性和资产流通量控制上作出符合需求的设计。  
   
@@ -344,7 +344,7 @@ end
 
 ### 租赁
 
-![图7](https://github.com/chandlerette/1808/blob/master/readmeimg/7.jpg)  
+![图7](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/7.jpg)  
 
 合约设计：  
 * 定义发起租赁、转移使用权、收回使用权、库存状态查询、库存更新等租赁业务各流程的函数。  
@@ -358,7 +358,7 @@ end
 
 ### 抵押
 
-![图8](https://github.com/chandlerette/1808/blob/master/readmeimg/8.jpg)  
+![图8](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/8.jpg)  
 
 合约设计：  
 * 定义发起抵押、转移所有权、收回使用权、抵押品状态查询、设置可抵押清单等抵押业务 各流程的函数；  
@@ -371,7 +371,7 @@ end
 
 ### 典当
 
-![图9](https://github.com/chandlerette/1808/blob/master/readmeimg/9.jpg)  
+![图9](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/9.jpg)  
 
 合约设计： 
 * 定义发起典当、转移使用权、收回所有权、当品状态查询、设置典当清单等典当业务各流 程的函数；  
