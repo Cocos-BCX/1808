@@ -1,6 +1,6 @@
 [submodule "ERC-1808"]
 	path = ERC-1808
-	url = git@github.com:Cocos-BCX/ERC-1808.git
+	url = git://github.com/Cocos-BCX/ERC-1808.git
 [submodule "EOS-1808"]
 	path = EOS-1808
-	url = git@github.com:Cocos-BCX/EOS-1808.git
+	url = git://github.com/Cocos-BCX/EOS-1808.git
