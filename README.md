@@ -17,22 +17,22 @@
   * [Data Structure of 1808 Standard](#Data-Structure-of-1808-Standard)
   * [Data Structure Reference of 1808 Standard](#Data-Structure-Reference-of-1808-Standard)
 - [Non-Homogeneous Digital Assets Standard](#Non-Homogeneous-Digital-Assets-Standard)
-  * [The Definition of  Non-Homogeneous Digital Assets](#The-Definition-of-Non-Homogeneous-Digital-Assets)
+  * [The Definition of Non-Homogeneous Digital Assets](#The-Definition-of-Non-Homogeneous-Digital-Assets)
   * [The Significance of Non-Homogeneous Digital Assets to Games](#The-Significance-of-Non-Homogeneous-Digital-Assets-to-Games)
   * [The Reasons to Standardized Non-Homogeneous Assets](#The-Reasons-to-Standardized-Non-Homogeneous-Assets)
-- [Worldview System](#Worldview System)
+- [Worldview System](#Worldview-System)
   * [Game World and the Worldview System](#Game-World-and-the-Worldview-System)
   * [Cross-World Item “Traveling”, Multiverse and Parallel World](#Cross-World-Item-Traveling-Multiverse-and-Parallel-World)
   * [Data Management in the Worldview System](#Data-Management-in-the-Worldview-System)
 - [Application Examples of COCOS 1808 Standard and Worldview System](#Application-Examples-of-COCOS-1808-Standard-and-Worldview-System)
   * [Operation of Contract on COCOS 1808 Standard Digital Assets](#Operation-of-Contract-on-COCOS-1808-Standard-Digital-Assets)
-    + [Transfer of Non-Homogenous Assets Ownership](#Transfer of Non-Homogenous Assets Ownership)
+    + [Transfer of Non-Homogenous Assets Ownership](#Transfer-of-Non-Homogenous-Assets-Ownership)
       - [Transfer of Non-Homogenous Assets-Caller](#Transfer-of-Non-Homogenous-Assets-Caller)
       - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets-Owner)
     + [Modify non-homogeneous Assets Data \(within a Specific Data Zone\)](#Modify-non-homogeneous-Assets-Data-within-a-Specific-Data-Zone)
-      - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets--Owner)
+      - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets-Owner)
   * [Scene Examples](#Scene-Examples)
-    + [Upgrading Gear in Game(Contract)](#Upgrading-Gear-in-Game-Contract)
+    + [Upgrading Gear in Game \(Contract\)](#Upgrading-Gear-in-Game-Contract)
     + [Game Items Travelling the Game Worlds and Making a Numerical Linkage](#Game-Items-Travelling-the-Game-Worlds-and-Making-a-Numerical-Linkage)
   * [Implementation of Complex Business Model](#Implementation-of-Complex-Business-Model)
     + [Lease](#Lease)
@@ -42,13 +42,13 @@
 # 1. Foreword
 ## Introduction
 
-   BCX-NHAS-1808 Standard (hereinafter referred to as "1808 Standard") is a non-homogeneous digital assets standard that applied to decentralized distributed ledger network. As the perfect way to represent various non-fungible items, non-homogeneous digital assets can cover the field of game items, gears, characters, map data, and even expansion pack in the game industry. This manual also focus on the worldview system based on 1808 Standard, such as world traveling, multiverse, and etc.  
+   COCOS 1808 Standard (hereinafter referred to as "1808 Standard") is a non-homogeneous digital assets standard that applied to decentralized distributed ledger network. As the perfect way to represent various non-fungible items, non-homogeneous digital assets can cover the field of game items, gears, characters, map data, and even expansion pack in the game industry. This manual also focus on the worldview system based on 1808 Standard, such as world traveling, multiverse, and etc.  
    
    This manual was created to help readers to understand and apply the 1808 Standard and worldview system, and please be aware of that descriptions on the manual will not always be consistent with the actual situation. Please update the manual or contact the authorities for the latest information if inconsistency happens.  
    
 ## Purpose of Writing
 
-   This manual was provided for users who working on game development, assets design and distribution, and game world design and management on COCOS-BCX blockchain network. This content has been developed to provide instruction to the 1808 Standard and its usage specifications so users can design a user-friendly digital assets and game world on the BCX network.  
+   This manual was provided for users who working on game development, assets design and distribution, and game world design and management on Cocos-BCX blockchain network. This content has been developed to provide instruction to the 1808 Standard and its usage specifications so users can design a user-friendly digital assets and game world on the BCX network.  
 
 ## COCOS 1808 Standard
 
@@ -81,7 +81,7 @@ As for the 1808 Standard, when an asset instance is referenced in a new business
 
 #### Assets Used as an Embedded or Combined Module on the Blockchain
 
-![P1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1.jpg)
+![P1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1_en.png)
 
   Game props and equipment may be composed of multiple components and items. Therefore, the non-homogeneous digital assets of blockchain games should also be able to be nested and contained. In this case, each non-homogeneous asset can be composed of multiple non-homogeneous assets. The parent asset can contain one or more child assets, and the child assets can further contain other child assets.   
   
@@ -91,7 +91,7 @@ As for the 1808 Standard, when an asset instance is referenced in a new business
 
   In the future, the market behavior of assets in the chain will be far beyond the traditional trading and circulation, so it is nesssary to lay a good foundation for a richer business type. Cocos-BCX refined the rights system of the assets and divided the rights of use and ownership of the assets.   
   
-  ![P2](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/2.jpg)
+  ![P2](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/2_en.png)
   
   1808 Standard’s design of separating the assets ownership from the right to use specifies existing permission system of the assets. The use right determines whether the user has the permission on most operations, while the ownership determines whether the user has the actual ownership and key rights to operate the assets. Certain operations are required to be co-signed by the owner and user.   
 Based on BCX contract system, 1808 Standard can easily deliver the business logic unable to be implemented with traditional blockchain/contract system, such as asset lease, pledges, and pawn.   
@@ -108,12 +108,12 @@ Based on BCX contract system, 1808 Standard can easily deliver the business logi
 * ERC-998  
   It is a combination of non-homologous tokens (CNFT, Composable NFTs) defined in Ethereum's smart contracts proposed by Matt Lockyer.   
   
-  ![P3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3.png)
+  ![P3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3_en.png)
 
   The figure shows the comparison of the above three non-homogeneous asset standards with NHAS-1808, which briefly compares the essentials that may be involved in blockchain and gaming. The differences marked in red are the features of the 1808 Standard designed by COCOS-BCX for the game running on-chain. These features are related to the data structure design of the 1808 standard assets in addition to the characteristics of the BCX chain network itself.  
 ### Data Structure of 1808 Standard  
 
-![P4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4.png)
+![P4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4_en.png)
 
   The non-homogeneous digital assets data structure in the blockchain network is divided into fixed data zone and  extensible data area. The fixed data zone stores the basic information of non-homogeneous digital assets, including asset ID, worldview statement and basic data zone; While the extensible data area is a functional section designed for attribute extension of non-homogeneous digital assets, including zone data and combination relationship data.   
   
@@ -209,7 +209,7 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 
   Different from the concept of the traditional game industry, BCX's blockchain games are not completely independent business scenarios. Each blockchain game can be considered a game world, and several game worlds with similar basic settings can be considered to have a common worldview.  
   
-![P5](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/5.jpg)  
+![P5](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/5_en.png)  
 
   The concept of worldview is not created by blockchain gaming, but a feature already shared by many modern games. For example, Warcraft, World of Warcraft, Hearthstone, and The Legend of Storm share a common worldview of Blizzard universe, in which a considerable part of game props, characters, and assets are common. Although these assets have a different explanation on specific attributes, skills, etc. in each game, the design of these assets stems from the common basic rules.  
   
@@ -223,19 +223,19 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
   
   Scalable custom data enables game designers to create unique game assets. Non-interfering zone data allows game assets to be given new properties that are an immune while "travelling" the world and the universe, while also making it possible of data linkage between games (such as skill gain/reduction). The image below is an example of the on-chain game assets travelling across the world line/parallel world:  
   
-![P6](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/6.jpg)  
+![P6](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/6_en.png)  
 
   According to the game operation design, the 1808 non-homogeneous assets standard support the design of paid travelling across the world line through a specific third-party. This is helpful for game operation to meet the needs of item balance and asset circulation control.  
   
 ## Data Management in the Worldview System
 
-  1808 non-homogeneous digital assets standard is defined on chain initially and operated via smart contract. The complicated data structure and combination design of the 1808 Standard makes the design of asset data security more important. Therefore, COCOS-BCX analyzes the risks and potential dangers that may occur during the operation of data on chain, and starts to make improvements.  
+  1808 non-homogeneous digital assets standard is defined on chain initially and operated via smart contract. The complicated data structure and combination design of the 1808 Standard makes the design of asset data security more important. Therefore, Cocos-BCX analyzes the risks and potential dangers that may occur during the operation of data on chain, and starts to make improvements.  
 
 * Separately Stored Assets and Contract Data  
-  Separate data storage can ensure that the asset owner has full ownership of the asset. If the contract and the asset data are stored together, the specific contract can call the assets owned by the contract under the authority of the contract developer, which is very unsafe. In COCOS-BCX, the data of homogeneous, non-homogeneous assets and smart contracts are stored separately, which is a more data-safe design, in addition to helping to reduce data flow consumption and improve blockchain efficiency;  
+  Separate data storage can ensure that the asset owner has full ownership of the asset. If the contract and the asset data are stored together, the specific contract can call the assets owned by the contract under the authority of the contract developer, which is very unsafe. In Cocos-BCX, the data of homogeneous, non-homogeneous assets and smart contracts are stored separately, which is a more data-safe design, in addition to helping to reduce data flow consumption and improve blockchain efficiency;  
   
 * Contract Verification Mechanism with Identity Authentication  
-  For contract functions involving sensitive operations, COCOS-BCX allows developers to define contract execution mechanisms with identity authentication. A contract function with authentication mechanism will only be executed when the caller meets the requirements, avoiding the risk of hackers maliciously executing a specific contract interface for illegal asset operations;  
+  For contract functions involving sensitive operations, Cocos-BCX allows developers to define contract execution mechanisms with identity authentication. A contract function with authentication mechanism will only be executed when the caller meets the requirements, avoiding the risk of hackers maliciously executing a specific contract interface for illegal asset operations;  
   
 * Control Contract Permissions by Zone Data  
   The contract is able to obtain all zone data in the 1808 Standard extended asset data, but changes to the asset data will be limited to the zone marked as current contract. That is, Game A can obtain the attribute data of the asset in Game B, but the changes to the asset will only be saved in zone A, and contract A cannot modify any data in zone B;  
@@ -245,7 +245,7 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 
 # Application Examples of COCOS 1808 Standard and Worldview System
 
-  This chapter will describe the operation of contract on BCX-NHAS-1808 standard digital assets, and how the non-homogeneous assets travel and link in different worldviews in COCOS-BCX chain. For more information, please refer to the `COCOS-BCX Smart Contract User Guide`.  
+  This chapter will describe the operation of contract on BCX-NHAS-1808 standard digital assets, and how the non-homogeneous assets travel and link in different worldviews in Cocos-BCX chain. For more information, please refer to the `Cocos-BCX Smart Contract User Guide`.  
   
 ## Operation of Contract on COCOS 1808 Standard Digital Asset 
 ### Transfer of Non-Homogenous Assets Ownership
@@ -282,7 +282,7 @@ value: the corresponding description of the index
 ## Scene Examples
 ### Upgrading Gear in Game(Contract)
  
-This is to introduce an example of the contract function code that enhances the equipment attributes in a game. This function represents a hardened action on the equipment in a common RPG game. Players can choose the equipment to be upgraded and the upgraded attribute category (STR, AGI, or INT, etc.), the game will parse the domain data and calculate the target value and input into this contract function. Since the COCOS-BCX contract system supports the internal random process, the success rate of the upgrade in this scenario can be displayed in a random manner.  
+This is to introduce an example of the contract function code that enhances the equipment attributes in a game. This function represents a hardened action on the equipment in a common RPG game. Players can choose the equipment to be upgraded and the upgraded attribute category (STR, AGI, or INT, etc.), the game will parse the domain data and calculate the target value and input into this contract function. Since the Cocos-BCX contract system supports the internal random process, the success rate of the upgrade in this scenario can be displayed in a random manner.  
 
 ```Lua
 -- contract function：upgrade gear 
@@ -345,7 +345,7 @@ end
   
 ### Lease 
 
-![P7](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/7.jpg)  
+![P7](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/7_en.png)  
 
 Contract Design:  
 * Define the functions for the leasing business, such as initiating leases, transferring use right, reclaiming use right, inventory status queries, and inventory updates.   
@@ -359,7 +359,7 @@ Process:
 
 ### Pledge
 
-![P8](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/8.jpg)  
+![P8](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/8_en.png)  
 
 Contract Design:  
 * Define the functions of the pledging business, such as initiating pledges, transferring ownership, reclaiming use right, collateral status query, and setting up pledge-backed lists;  
@@ -372,7 +372,7 @@ Process:
 
 ### Pawn
 
-![P9](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/9.jpg)  
+![P9](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/9_en.png)  
 
 Contract Design:  
 * Define the functions of the pawn business, such as initiating pawn, transferring the use right, reclaiming ownership, the status query of a pawned item, and setting up a pawn list;  
