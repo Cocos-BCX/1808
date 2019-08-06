@@ -1,15 +1,15 @@
-# COCOS 1808 非同质数字资产标准和世界观系统 v1.0  
+# COCOS 1808 BCX-NHAS-1808 Standard & Worldview System v1.0  
 
 
-- [前言](#前言)
-  * [介绍](#介绍)
-  * [编写目的](#编写目的)
-  * [COCOS 1808 标准](#COCOS-1808-标准)
-  * [1808 标准的特性](#1808-标准的特性)
-    + [泛用的唯一价值表达](#泛用的唯一价值表达)
-    + [跨越多个使用场景而互不影响\(世界墙\)](#跨越多个使用场景而互不影响世界墙)
-    + [世界观兼容设计](#世界观兼容设计)
-    + [跨网络跨标准兼容设计](#跨网络跨标准兼容设计)
+- [Foreword](#Foreword)
+  * [Introduction](#Introduction)
+  * [Purpose of Writing](#Purpose-of-Writing)
+  * [COCOS 1808 Standard](#COCOS-1808-Standard)
+  * [Features](#Features)
+    + [Universally Used Unique Value Expression](#Universally-Used-Unique-Value-Expression)
+    + [Cross Use Cases without Affecting Each Other \(World Wall\)](#Cross-Use-Cases-without-Affecting-Each-Other-World-Wall)
+    + [Worldview Compatible Design](#Worldview-Compatible-Design)
+    + [Cross-Network and Cross-Standard Compatible Design](#Cross-Network-and-Cross-Standard-Compatible-Design)
     + [允许资产所有者放弃特定域数据](#允许资产所有者放弃特定域数据)
     + [在链内将资产作为镶嵌品或模块组合使用](#在链内将资产作为镶嵌品或模块组合使用)
   * [1808 标准与其他非同质资产标准的区别](#1808-标准与其他非同质资产标准的区别)
