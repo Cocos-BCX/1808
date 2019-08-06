@@ -10,315 +10,318 @@
     + [Cross Use Cases without Affecting Each Other \(World Wall\)](#Cross-Use-Cases-without-Affecting-Each-Other-World-Wall)
     + [Worldview Compatible Design](#Worldview-Compatible-Design)
     + [Cross-Network and Cross-Standard Compatible Design](#Cross-Network-and-Cross-Standard-Compatible-Design)
-    + [允许资产所有者放弃特定域数据](#允许资产所有者放弃特定域数据)
-    + [在链内将资产作为镶嵌品或模块组合使用](#在链内将资产作为镶嵌品或模块组合使用)
-  * [1808 标准与其他非同质资产标准的区别](#1808-标准与其他非同质资产标准的区别)
-  * [1808 标准数据结构](#1808-标准数据结构)
-  * [1808 标准数据结构对照](#1808-标准数据结构对照)
-- [非同质数字资产标准](#非同质数字资产标准)
-  * [何谓非同质数字资产](#何谓非同质数字资产)
-  * [非同质数字资产对游戏的意义](#非同质数字资产对游戏的意义)
-  * [为什么需要标准化的非同质资产](#为什么需要标准化的非同质资产)
-- [世界观系统](#世界观系统)
-  * [游戏世界与世界观系统](#游戏世界与世界观系统)
-  * [世界线穿越、多元宇宙与平行世界](#世界线穿越多元宇宙与平行世界)
-  * [世界观系统中的数据管控方式](#世界观系统中的数据管控方式)
-- [1808 标准与世界观系统应用范例](#1808-标准与世界观系统应用范例)
-  * [合约对 1808 标准资产的操作](#合约对-1808-标准资产的操作)
-    + [非同质资产所有权转移](#非同质资产所有权转移)
-      - [非同质资产转移 – 调用者](#非同质资产转移--调用者)
-      - [非同质资产转移 – 所有者](#非同质资产转移--所有者)
-    + [修改非同质资产数据\(特定数据域内\)](#修改非同质资产数据特定数据域内)
-      - [非同质资产转移 – 所有者](#非同质资产转移--所有者)
-  * [场景范例](#场景范例)
-    + [游戏\(合约\)内强化装备](#游戏合约内强化装备)
-    + [道具在世界中穿越并做数值联动](#道具在世界中穿越并做数值联动)
-  * [复杂业务模式的实现](#复杂业务模式的实现)
-    + [租赁](#租赁)
-    + [抵押](#抵押)
-    + [典当](#典当)
+    + [Asset Owners are Allowed to Discard Specific Zone Data](#Asset-Owners-are-Allowed-to-Discard-Specific-Zone-Data)
+    + [Assets Used as an Embedded or Combined Module on the Blockchain](#Assets-Used-as-an-Embedded-or-Combined-Module-on-the-Blockchain)
+    + [Support Complex Design of Circulation Model](#Support-Complex-Design-of-Circulation-Model)
+  * [Comparison of Non-homogeneous Assets](#Comparison-of-Non-homogeneous-Assets)
+  * [Data Structure of 1808 Standard](#Data-Structure-of-1808-Standard)
+  * [Data Structure Reference of 1808 Standard](#Data-Structure-Reference-of-1808-Standard)
+- [Non-Homogeneous Digital Assets Standard](#Non-Homogeneous-Digital-Assets-Standard)
+  * [The Definition of  Non-Homogeneous Digital Assets](#The-Definition-of-Non-Homogeneous-Digital-Assets)
+  * [The Significance of Non-Homogeneous Digital Assets to Games](#The-Significance-of-Non-Homogeneous-Digital-Assets-to-Games)
+  * [The Reasons to Standardized Non-Homogeneous Assets](#The-Reasons-to-Standardized-Non-Homogeneous-Assets)
+- [Worldview System](#Worldview System)
+  * [Game World and the Worldview System](#Game-World-and-the-Worldview-System)
+  * [Cross-World Item “Traveling”, Multiverse and Parallel World](#Cross-World-Item-Traveling-Multiverse-and-Parallel-World)
+  * [Data Management in the Worldview System](#Data-Management-in-the-Worldview-System)
+- [Application Examples of COCOS 1808 Standard and Worldview System](#Application-Examples-of-COCOS-1808-Standard-and-Worldview-System)
+  * [Operation of Contract on COCOS 1808 Standard Digital Assets](#Operation-of-Contract-on-COCOS-1808-Standard-Digital-Assets)
+    + [Transfer of Non-Homogenous Assets Ownership](#Transfer of Non-Homogenous Assets Ownership)
+      - [Transfer of Non-Homogenous Assets-Caller](#Transfer-of-Non-Homogenous-Assets-Caller)
+      - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets-Owner)
+    + [Modify non-homogeneous Assets Data \(within a Specific Data Zone\)](#Modify-non-homogeneous-Assets-Data-within-a-Specific-Data-Zone)
+      - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets--Owner)
+  * [Scene Examples](#Scene-Examples)
+    + [Upgrading Gear in Game(Contract)](#Upgrading-Gear-in-Game-Contract)
+    + [Game Items Travelling the Game Worlds and Making a Numerical Linkage](#Game-Items-Travelling-the-Game-Worlds-and-Making-a-Numerical-Linkage)
+  * [Implementation of Complex Business Model](#Implementation-of-Complex-Business-Model)
+    + [Lease](#Lease)
+    + [Pledge](#Pledge)
+    + [Pawn](#Pawn)
 
 # 1. Foreword
 ## Introduction
 
-   COCOS 1808 标准(下文简称“1808 标准”)是一种面向去中心分布记账式网络的非同质数字 资产标准。非同质数字资产是表达各类非可替代事物的最佳选择，在游戏行业，非同质资产可以表 达的领域涵盖游戏道具、装备、人物角色、地图数据、甚至是数据扩展包。本手册同样对基于 1808 标准设计的世界观系统展开了讲解，例如世界穿越与多元宇宙等。   
+   BCX-NHAS-1808 Standard (hereinafter referred to as "1808 Standard") is a non-homogeneous digital assets standard that applied to decentralized distributed ledger network. As the perfect way to represent various non-fungible items, non-homogeneous digital assets can cover the field of game items, gears, characters, map data, and even expansion pack in the game industry. This manual also focus on the worldview system based on 1808 Standard, such as world traveling, multiverse, and etc.  
    
-   我们尽力通过本手册使读者更容易理解和运用 1808 标准与世界观系统，但并不意味着手册上的 所有描述都会与实际使用的标准、世界观系统永远一致，当发现文中描述与实施产生差异时，请即 时更新本手册或联系官方获取资讯。    
-
+   This manual was created to help readers to understand and apply the 1808 Standard and worldview system, and please be aware of that descriptions on the manual will not always be consistent with the actual situation. Please update the manual or contact the authorities for the latest information if inconsistency happens.  
+   
 ## Purpose of Writing
 
-   本手册的阅读对象为：使用 Cocos-BCX 区块链网络进行游戏开发、资产设计与发行、游戏世 界设计与管理等工作的从业者。阅读本手册，更好的理解 1808标准及其使用规范，以便在 BCX网络 上设计体验良好的数字资产和游戏世界。  
+   This manual was provided for users who working on game development, assets design and distribution, and game world design and management on COCOS-BCX blockchain network. This content has been developed to provide instruction to the 1808 Standard and its usage specifications so users can design a user-friendly digital assets and game world on the BCX network.  
 
 ## COCOS 1808 Standard
 
-   在支持非同质数字资产的 Cocos-BCX 链上，我们考察了现有的多种非同质数字资产标准，并 结合游戏行业需求定义了 COCOS 1808 非同质数字资产标准用于规范所有将在 BCX 链上发布和 流通的非同质数字资产。  
+   Combining the needs of gaming industry, we reviewed a number of existing non-homogeneous digital asset standards and defined BCX-NHAS-1808 to be the one to standardize all non-homogeneous digital assets that published and circulated on the BCX chain.  
 
 ### Features
 #### Universally Used Unique Value Expression
 
-  1808 标准定义的非同质数字资产支持丰富的数据自定义、扩展方法，对各类游戏中的资产类型 有良好的兼容性，可作为各类游戏数据的泛用表达。   
+  The non-homogeneous digital assets defined by the 1808 Standard support a variety of data customizing and scaling approaches. They are compatible with different asset types in various games, and can be used as a general expression for various game data.   
 
 #### Cross Use Cases without Affecting Each Other (World Wall)
 
-  扩展数据区域以域为单位组合，每一个域绑定一个或若干仅对自己负责的合约，代表的是一个 使用场景(游戏世界)所专有的数据区域，域展开之后的键值对信息代表了一系列游戏业务相关的数 据，而不同域之间的数据可互读但互不可写，即不同使用场景间的数据变更不会互相影响，游戏间 的“世界墙”会阻止这些属性进入其他的世界，不会存在“A 游戏中降级的装备到了 B 游戏发现居 然也降级了”的情况。   
+  The extended data area is combined in the unit of zone. Each zone is bound to one or several contracts that are only responsible for itself. It represents a data area that is unique to the use case (game world). The key-value pair information after the zone is unfolded represents a series of game business related data. Data between different zones can be read but not written mutually, that is, data changes in different use cases do not affect each other. The "world wall" of the game will prevent these properties from affecting other worlds, which will not result in the situation of "equipment downgraded in game A is also downgraded in game B".   
 
 #### Worldview Compatible Design
 
-  1808 标准定义的非同质数字资产允许在同一世界观下的数字资产在不同的业务场景中使用，因 此需要有一定的规则用于在不同业务实体中平衡该资产价值（能力值）。   
+  The non-homogeneous digital assets defined by the 1808 Standard allow digital assets under the same worldview to be used in different business scenarios. Therefore, there requires certain rules to balance the asset value (capability value) among different business entities.  
   
-在 1808 标准中，资产实例在新的业务场景中引用时会确定一个相对属性，该属性以某一个确定 的其他域数据作为参考，代表该资产的基本价值，并且该数据能够在同一世界观下的其他业务实体 中识别，当该资产实例进入不同的业务实体时，会根据此属性确定在本业务实体中的价值，而其他 属性例如装备技能等信息由业务实体的域数据形式补充。   
+As for the 1808 Standard, when an asset instance is referenced in a new business scenario, a relative attribute is determined, which takes a certain other zone data as references, representing the basic value of the asset. The data can be identified in other business entities under the same worldview. When the asset instance enters different business entities, the value in the business entity is determined according to this attribute, and other attributes such as equipment skills are supplemented by the zone data form of the business entity.   
 
 #### Cross-Network and Cross-Standard Compatible Design
 
-  本标准定义的数字资产具备兼容其他网络非同质数字资产标准的设计，包括 ERC-721、ERC1155、ERC-998 等，其中针对通过合约定义的单一非同质数字资产类型(ERC-721 等)，可藉由定义一 个具备相同自定义数据结构的资产类型完成资产实例的兼容；针对合约定义的可嵌套/组合资产类型 (ERC-998等)，可藉由在扩展数据区域中添加资产组合关系数据完成兼容。   
+  The digital assets defined in this standard are designed to be compatible with other network non-homogeneous digital asset standards, including ERC-721, ERC-1155, ERC-998, etc. For a single non-homogeneous digital asset type defined by contracts (ERC-721, etc.), the asset instance can be compatible by defining an asset type with the same custom data structure. For nested/combined asset types defined by contracts (ERC-998, etc.), compatibility can be achieved by adding portfolio relationship data to the extended data area.   
 
-#### 允许资产所有者放弃特定域数据
+#### Asset Owners are Allowed to Discard Specific Zone Data
 
-  1808 标准数字资产的域数据会随着经历的游戏数量增加而留下游戏的记录，当所有者因为道具 强化错误、被赋予负面属性、希望重新挑战游戏等原因不再需要某个游戏中产生的数据时，可以选 择删除这个游戏对应的域数据，使资产重新以初始的状态进入游戏。   
+  The zone data of the 1808 standard digital assets will be left with a record of the game as the number of games experienced increases. When the owner no longer needs the data generated in a certain game because of props reinforcement errors, being given negative attributes or wishing to re-challenge the game, etc., the owner can choose to delete the zone data corresponding to the game, allowing the assets to reenter the game in the initial state.   
   
-  资产所有者对资产域数据的控制权限仅限于对指定域数据的完全移除，而非对域数据进行修 改，以免所有者通过修改这些域数据达到作弊效果。此外，域数据的删除权限也可以有效防止恶意 合约向特定资产写入大量垃圾数据导致数据冗余。   
+  The asset owner's control over the asset zone data is limited to the complete deletion of the specified zone data, rather than the change of zone data to prevent the owner from cheating. In addition, the deletion of zone data can also effectively prevent malicious contracts from writing large amounts of junk data to specific assets, resulting in data redundancy.   
 
-#### 在链内将资产作为镶嵌品或模块组合使用
+#### Assets Used as an Embedded or Combined Module on the Blockchain
 
-![图1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1.jpg)
+![P1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1.jpg)
 
-  以游戏为例，装备道具可能是由更多的组件、物品组合而成的，因此区块链游戏的非同质数字 资产也应该具备能够嵌套包含的特性。这一情况下每一个非同质资产都可以由多个非同质资产组 成，父级资产可以包含一个或多个子级资产，子级资产又可以包含其他的子级资产。   
+  Game props and equipment may be composed of multiple components and items. Therefore, the non-homogeneous digital assets of blockchain games should also be able to be nested and contained. In this case, each non-homogeneous asset can be composed of multiple non-homogeneous assets. The parent asset can contain one or more child assets, and the child assets can further contain other child assets.   
   
-  对于具有装备建造或组合的游戏场景，1808 标准提供支持资产组合的设计，扩展数据中包含记 录组合关系的区域，区域数据在资产组合时记录此次嵌套关系的信息，在此关系解除前，被嵌套的 子级资产将无法发生所有权转移的行为。   
+  For game scenarios with equipment construction or combination, the 1808 Standard provides a design that supports asset portfolios. The extended data contains the zone that records the combination relationship. The zone data records the information of the nested relationship when the asset is combined. Before the relationship is terminated, the ownership of nested child assets will not be able to be transferred.   
 
-#### 支持复杂的流通模型设计
+#### Support Complex Design of Circulation Model
 
-  未来资产在链上的市场行为将远不限于传统的交易和流通，因此势必需要为更加丰富的业务类 型打好基础。Cocos-BCX在设计时细化了资产的权限系统，将资产的使用权与所有权进行了划分。   
+  In the future, the market behavior of assets in the chain will be far beyond the traditional trading and circulation, so it is nesssary to lay a good foundation for a richer business type. Cocos-BCX refined the rights system of the assets and divided the rights of use and ownership of the assets.   
   
-  ![图2](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/2.jpg)
+  ![P2](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/2.jpg)
   
-  1808 标准数字资产的权属设计包含使用权和所有权两部分，两者的权限相互分离又有所关联。 使用权决定用户是否具备资产的大部分操作权限，而所有权决定用户是否具备资产的实际归属权和 关键操作权，并且特定操作在进行时可能需要所有者与使用者共同授权才可进行。   
-配合链系统对相关权属操作的细化，1808 标准数字资产能够支持传统链/合约系统无法做到的业 务逻辑，例如：资产租赁、抵押、典当等。  
+  1808 Standard’s design of separating the assets ownership from the right to use specifies existing permission system of the assets. The use right determines whether the user has the permission on most operations, while the ownership determines whether the user has the actual ownership and key rights to operate the assets. Certain operations are required to be co-signed by the owner and user.   
+Based on BCX contract system, 1808 Standard can easily deliver the business logic unable to be implemented with traditional blockchain/contract system, such as asset lease, pledges, and pawn.   
 
-### 1808 标准与其他非同质资产标准的区别
+### Comparison of Non-homogeneous Assets
 
-  目前较为流行的非同质数字资产标准有以太坊网络的 ERC-721、ERC-1155、ERC-998 等，这些标 准非同质资产用于以太坊网络上不同的使用场景和需求：
+  At present, ERC-721, ERC-1155, and ERC-998 of Ethereum network are the popular non-homogeneous digital asset standards, which are used in different scenarios and for different needs on the Ethereum network:  
 * ERC-721  
-  以太坊网络中被官方正式接受的一种通过智能合约定义的非同质数字资产标准，具备可自 定义的数据区，为物品或记录的数字化提供了可能。   
-  代表应用：加密猫、加密名人等。   
+  It is an officially accepted non-homogeneous digital asset standard defined by smart contracts in the Ethereum network. It has a customizable data zone, which makes it possible to digitize items or records.  
+  Typical applications are: Crypto Kitties, Crypto Celebrities, etc   
 * ERC-1155  
-  由 Enjin 提出的一种在以太坊的单一智能合约中定义多个非同质资产的标准接口，主要服务 于区块链游戏中的虚拟道具。   
-  代表应用：War of Crypto.  
+  It is a standard interface proposed by Enjin to define multiple non-homogenous assets in Ethereum's single smart contract, serving mainly the virtual props in blockchain games.   
+  Typical application: War of Crypto.  
 * ERC-998  
-  由 Matt Lockyer 提出的一种在以太坊的智能合约中定义的可组合非同质代币标准(CNFT, Composable NFTs) 。   
+  It is a combination of non-homologous tokens (CNFT, Composable NFTs) defined in Ethereum's smart contracts proposed by Matt Lockyer.   
   
-  ![图3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3.png)
+  ![P3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3.png)
 
-  图 1-3-1 是上述三种非同质资产标准与 1808 标准的对比图，该图就非同质资产在链和游戏上可 能涉及的要点作了简单对比，其中红色的差异部分正是 Cocos-BCX 针对链上游戏运行需求对 1808 标 准设计的特性，这些特性除了与 BCX 链网络自身的特性有关外，也与 1808 标准资产的数据结构设计有关。  
-### 1808 标准数据结构
+  The figure shows the comparison of the above three non-homogeneous asset standards with NHAS-1808, which briefly compares the essentials that may be involved in blockchain and gaming. The differences marked in red are the features of the 1808 Standard designed by COCOS-BCX for the game running on-chain. These features are related to the data structure design of the 1808 standard assets in addition to the characteristics of the BCX chain network itself.  
+### Data Structure of 1808 Standard  
 
-![图4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4.png)
+![P4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4.png)
 
-  如上图所示，1808 标准非同质资产的数据结构分为两个基本功能区：固有数据区域用来存储非 同质数字资产的基本信息，分为资产 ID、世界观申明以及基础数据区域三段；扩展数据区域是为非 同质数字资产属性扩展专门设计的功能性数据区域，包括组合关系数据和域数据两部分。   
+  The non-homogeneous digital assets data structure in the blockchain network is divided into fixed data zone and  extensible data area. The fixed data zone stores the basic information of non-homogeneous digital assets, including asset ID, worldview statement and basic data zone; While the extensible data area is a functional section designed for attribute extension of non-homogeneous digital assets, including zone data and combination relationship data.   
   
-  固有数据定义该非同质数字资产 ID、世界观及其他基础数据，其中资产 ID是该资产实例在分布 记账式网络中的唯一标识，是该资产实例在进行访问、查询、修改等动作时的唯一凭据；世界观包 括该资产生效和支持的游戏类型、世界，以及此资产在网络中流通需要使用的世界流通货币类型； 基础数据包括资产所有者 ID、制作者 ID、制作时间和该资产的基本属性（例如装备描述等）；另外 基础数据中也包含资产使用权黑白名单，用来约束使用者对此资产的数据访问范围，可根据需要定 义为黑名单或白名单模式。   
+  The fixed data zone defines asset ID, worldview statement and other basic data. The asset ID is the unique identifier of assets instance in the distributed ledger network, and the unique credential to access, check and modify the assets. Worldview statement, including the worldview ID, the type of game in which the asset is in effect and supported, the world and the currencies supporting the circulation of assets in the network. The basic data includes the asset owner ID, producer ID, production time, basic attributes of the asset (eg, equipment descriptions, etc.)，and further consists of information including a basic description of the assets, production time, producer, owner, user, customized black & white list of use right, etc.   
   
-  扩展数据区域是该资产支持的世界观内各业务数据的存储区域，包含组合关系数据区与域数据 两个部分，其中组合关系数据区包含两个表用于表达资产之间的嵌套组合关系；域数据区域则是不 同业务实体在该区域拥有的专属数据区，不同业务实体间的数据区相互隔离，域数据以域标识和数 据的键值对形式存储。   
+  The extensible data area is a storage area of each business data in the world view supported by the asset, and includes a combined relation data zone and domain data, wherein the combined relation data zone includes two tables for expressing a nested combination relationship between assets; The domain data area is a dedicated data area owned by different business entities in the zone. The data areas between different business entities are isolated from each other, and the domain data is stored in the form of key identifiers of domain identifiers and data.   
   
-### 1808 标准数据结构对照
+### Data Structure Reference of 1808 Standard
 
-  表 1-3-1是本标准定义的非同质数字资产固有数据区域各字段类型和标识对照表。 
+  The field types and identification reference tables of the fixed data zone of non-homogeneous digital assets defined in this standard. 
   
- 项名称 | 基础标识  | 数据类型
+ Name | Basic Identification  | Type
  ---- | ----- | ------  
- 资产 id | nh_asset_id | asset_id_type  
- 世界观申明 | world_view | world_view_type  
- 所有者 | nh_asset_owner | account_id_type 
- 制作者 | nh_asset_creator | account_id_type 
- 制作时间 | nh_asset_create_time | time_point_sec 
- 资产基本描述 | nh_asset_description | string 
- 使用权名单 | limit_list | string vector<contract_id_type>
- 使用权名单模式 | limit_type | nh_asset_lease_limit_type
+ assets  id | nh_asset_id | asset_id_type  
+ world wiew | world_view | world_view_type  
+ owner | nh_asset_owner | account_id_type 
+ creator | nh_asset_creator | account_id_type 
+ create time | nh_asset_create_time | time_point_sec 
+ asstes description | nh_asset_description | string 
+ use right list | limit_list | string vector<contract_id_type>
+ use rght list type | limit_type | nh_asset_lease_limit_type
 
-  `nh_asset_id` 字段类型为 nh_asset_id_type，该类型的设计原则为保持网络中的唯一性即可，对 ID 长度没有硬性要求，但从多网络兼容性考虑，ID 的最大样本数量应能够覆盖现有各式去中心分布记 账式网络中的非同质数字资产实例的最大预期数量，例如以太坊网络中的资产 ID 为 40 字节长度的 HASH 地址，可支持的最大样本数为 1.462*10^48 个，则在应用此标准的网络中设计此资产 ID 时应 考虑使用样本容量大于该数值的 hash地址或其他唯一标识方式；   
+  `asset_id_type`: The asset_id_type is designed to maintain the uniqueness in the network, which requires little for the ID length. However, from the perspective of multi-network compatibility, the maximum sample size of the ID should cover the maximum expected number of non-homogeneous digital asset instances in the existing decentralized distributed account-based network. For example, if the asset ID in the Ethereum network is a 40-byte hash address and the maximum number of samples that can be supported is 1.462*10^48, hash addresses or other unique identification approaches with a sample size greater than this value is considered when designing the asset ID in the network to which this standard is applied.   
   
-  `world_view` 字段类型为 world_view_type，包含此资产适用的世界观 ID 与该世界观对应的世界流 通货币，其中世界观 ID 为网络唯一标识，流通货币为该货币的唯一符号（使用符号作为唯一凭证的 网络）或地址（使用地址作为唯一凭证的网络）； 
+  `world_view`: The world_view_type contains the worldview ID applied to the asset and the world currency corresponding to the worldview, where the Worldview ID is a unique identifier for the network, and the currency in circulation is the unique symbol of the currency (the network using the symbol as a unique credential) or the address (the network using the address as the unique credential).  
   
-  `nh_asset_owner` 与 `nh_asset_creator` 字段类型为 account_id_type，应采用具备唯一性和足够样本容量的数据类型；   
+  `nh_asset_owner` and `nh_asset_creator`: The asset_owner and Asset_creator fields type is account_id_type, which should be of a unique and sufficient sample size.   
   
-  `nh_asset_create_time` 字段类型为 time_point_sec，用以标识此资产实例创造的日期，由该实例化 事务完成时的账本时间戳决定；   
+  `nh_asset_create_time`: The asset_create_time field type is time_point_sec, which is used to identify the date when this asset instance is created. It is determined by the timestamp of the ledger when the instantiation transaction is completed.   
   
-  `nh_asset_description` 字段类型为 string，是一段可用于表达资产实例基本属性的数据，可采用自 定的解析或加密方式处理该段数据以匹配特定的业务实体和应用场景；   
+  `nh_asset_description`: The asset_description field type is a string, which is a piece of data that can be used to express the basic attributes of an asset instance. The data can be processed in a custom parsing or encryption manner to match specific business entities and application scenarios.   
   
-  `limit_list` 字段类型为 vector<contract_id_type>，是一段用于表达资产使用权范围控制的列表，可 根据 limit_type 中规定的限制模式采用白名单模式或黑名单模式。白名单模式下，资产的域数据将仅 能在名单中添加的游戏中发生修改行为，而黑名单模式下，资产的域数据将无法在名单中添加的游戏里发生修改行为； 
+  `limit_list`: The limit_list field type is vector<contract_id_type>，which is a list used to controll the scope of use of the asset by being set in whitelist mode or blacklist mode according to the restriction mode specified in limit_type. The zone data of the asset can only be modified in the game added in the list in whitelist mode.  
   
- `limit_type` 字段类型为 nh_asset_lease_limit_type，是使用权名单模式的模式枚举，包含白名单模 式和黑名单模式两种状态。   
+ `limit_type`: The limit_type  field type is nh_asset_lease_limit_type, and is mode enumeration using the rights list mode, which includes two states: whitelist mode and blacklist mode.   
  
-  表 1-3-2是本标准定义的非同质数字资产扩展数据区域各字段类型和标识对照表。 
+  The field types and identification reference tables of the extensible data zone of non-homogeneous digital assets defined in this standard.  
   
-  项名称 | 扩展区标识  | 数据类型
+  Name | Extensible Zone Identification  | Type
  ---- | ----- | ------  
-组合关系数据 | mod_data | list<parents>, list<children> 
-域数据列表 | describe_with_contract | map<contract_id_type, Map>   
-域标识 | session_key | contract_id_type 
-域数据 | session_data | map<string, string> 
-域内键 | inner_key | string  
-域内值 | inner_value| string   
+data with combination relationship | mod_data | list<parents>, list<children> 
+zone data list | describe_with_contract | map<contract_id_type, Map>   
+zone identification | session_key | contract_id_type 
+zone data | session_data | map<string, string> 
+inter-zone key | inner_key | string  
+inter-zone value | inner_value| string   
 
-  `Mod_data` 字段类型为 id 列表，是一个由标识父级资产 ID 和子级资产 ID 列表组成的关系表，用 于描述不同业务实体中资产的组合、嵌套关系；   
+  `Mod_data`: The Mod_data field type is an id list, which is a relationship table consisting of a list of identifiers of parent asset IDs and child asset IDs, which are used to describe the combination and nesting relationship of assets in different business entities.   
   
-  `describe_with_contract` 字段类型为 map<contract_id_type, Map>，是一个由域标识和域数据组成的键值对映射表，其中域标识为业务实体的类型标记，对应一个或若干合约，该业务对此资产实例的 所有数据交互将在此区域内进行；   
+  `describe_with_contract`: The World_view field type is a map, which is a key-value pair mapping table composed of zone identifiers and zone data. The zone identifier is a type identifier of the business entity, corresponding to one or several contracts, and all data interactions of the business instance for this asset instance will be performed in this zone.   
   
-  `Session_key` 字段类型为 contract_id_type，为该业务应包含的一个或多核合约的 id，该 id 应与其他唯一标识一样具备唯一性与充足的样本容量； 
+  `Session_key`: The Session_key field type is contract_id_type, which is the id of one or more core contracts that the business should contain. The id should be as unique and sufficient as the other unique identifiers. 
   
-`Session_data` 字段类型为 map<string, string>，由域内键 inner_key 和域内值 inner_value 组成，这 一键值对为字符串，键与值的具体数据均由负责此域的业务实体自行定义，并可以根据其需求使用 结构化或加密的字符串作为其中数据。
+`Session_data`: The session_data field type is a map, which consists of the inner_key and the inner_value. The specific data of the key and value is defined by the business entity responsible for this zone, which may include structured or encrypted strings as its data according to its needs.  
 
-# 非同质数字资产标准
-## 何谓非同质数字资产
+# Non-Homogeneous Digital Assets Standard
+## The Definition of  Non-Homogeneous Digital Assets
 
-  非同质数字资产是相较于传统货币类同质数字资产的一种分类，指一种应用于分布记账式网络 中的资产类型，该类型的资产实例具备唯一性，具备除唯一标识外不同的数据项及内容，同一类型 的非同质资产实例也无法直接合并且不可分割。   
+  The non-homogeneous digital assets is a type of asset compared with traditional currency homogeneous assets. It applied to distributed ledger network with unique assets instance, which have different data items and contents except for the unique identifiers, and those of the same type cannot be directly combined and cannot be compartmentalized.   
   
-  以更接近现实的举例做对比：比特币是典型的同质数字资产，无差别且可以相互替换，某一账 户在转走一个比特币的同时接收到一个，那么账户上的余额并不会改变，也不会引起任何价值变 化，这也即是同质资产的另一个特征——可拆分与合并。   
+  Taking a more realistic asset, Bitcoin, as an example, this typical homogeneous digital asset has no difference and can be replaced with each other. If an account receives a Bitcoin while transferring another one, the balance, as well as the value, will remain the same, which shows other characteristics of homogeneous assets, divisible and combinable.   
   
-  与之相对的，非同质数字资产具有唯一性，不可拆分或简单合并，每一个非同质数字资产在生 产之初即具备特定的属性，特别是 1808 标准下的非同质数字资产，具有更加复杂的扩展数据设计与 资产嵌套、穿越等设计（见 1.3 中关于 1808 标准资产的特性描述）。   
+  In contrast, with the specific attributes at the beginning of production,non-homogeneous digital assets are unique and cannot be split or simply merged, especially for those under 1808 Standard, for having more complex designs like asset nesting, cross-world traveling and scalable data (see the description on the characteristics of 1808 standard assets).  
   
-  假设将游戏《魔兽世界》以区块链的方式类比，其所有的游戏道具均可设定为非同质数字资 产，当玩家完成任务后可以获得传奇装备“逐风者的祝福之剑”，该装备除了基本的攻击、速度、 重量等数值外也包含诸多技能效果，这些信息都能够在非同质数字资产的可扩展数据中表达，而如 果玩家再次获得这把武器时并不会使这两把武器合并，而是分别以独立的资产数据存在，即便它们 的属性、技能甚至描述都一样。此外，该装备可以由拥有者出让或者与其他玩家进行道具交换以及 销毁，装备的信息始终以链上可追溯的形式独立存在。   
+  Making an analogy between "World of Warcraft" and the blockchain, all the props of the former one can be set as non-homogeneous digital assets. When players completing the task, they shall get the legendary equipment "Blessed Blade of the Windseeker", which contains many skills and effects besides the basic values of attack, speed, weight, etc. all can be expressed in the scalable data of non-homogeneous digital assets. If obtained again, the weapons will not be merged but exist as independent asset data despite their same attributes, skills and even descriptions. In addition, the equipment can be sold, exchanged, or destroyed, while its information will always exist independently in a traceable form on the chain.  
   
-  也就是说，非同质资产是一种适用于游戏道具、真实物品等唯一性事物的数字化描述形式，这 一特点将对区块链游戏产业的发展产生决定性的作用。   
+  That is to say, non-homogeneous assets are a form of digital description applicable for unique items such as game props and real objects, playing a key role in the development of the blockchain game industry.   
 
-## 非同质数字资产对游戏的意义
+## The Significance of Non-Homogeneous Digital Assets to Games
 
-从 Cocos-BCX的白皮书中可以得知，区块链游戏的发展历程可以被划分为四个阶段：   
+As shown in the Cocos-BCX whitepaper, there are four stages of blockchain gaming:   
 
-1. 使用同质资产做游戏“金币”的结算   
-2. 游戏“金币”和道具的自由兑换   
-3. 关键规则上链运行   
-4. 游戏整体上链运行   
+1. ungible Token as a Settlement Measure of In-Game Economy;   
+2. Free Exchange of Game Coins and Assets;   
+3. Key Game Algorithms Running on Blockchain;   
+4. The Game as a whole Running on the Blockchain.   
 
-  其中第二阶段的“道具”并非仅指游戏内的道具，而是进一步指游戏内的各类唯一性数字资 产，这些广义“道具”的涵盖范围包括道具物品、装备、角色信息、关卡数据等，而在第三、四阶 段时这一概念甚至可以拓展到游戏资源、地图场景、剧情数据、DLC等。  
-可以认为，一个定义充分的标准化非同质数字资产将为区块链游戏行业带来阶段性飞跃的基石。  
+  The "props" in the second stage go beyond the props to various unique digital assets in the game. It covers items, equipment, character information, level data, etc. and can even be extended to game resources, map scenes, plot data, DLC, etc. in the third and fourth stage.  
+It can be argued that a well-defined standardized non-homogeneous digital asset will be the cornerstone of the phased leap for the blockchain gaming.  
 
-## 为什么需要标准化的非同质资产
+## The Reasons to Standardized Non-Homogeneous Assets
 
-  数字资产的标准化是一项基础工作，是链网络可持续、可扩展、科学运行的重要组成部分，设 计标准化的非同质资产具有如下意义：  
+  Standardizing digital assets is a basic work, as well as the key part to the sustainable, scalable, and scientific operation of the chain network. The significance of designing standardized non-homogeneous assets includes:  
   
-* 非同质资产标准化在资产的生命周期中起到定义、格式、结构规范化的保障作用，标准化 的数字资产之间具备良好的兼容性和可解读性，为第三方的非同质数字资产交流提供了基础；  
-* 标准化的非同质资产可以免去冗杂的自定义结构解析，为提高链网络运行效率、通行能力 提供了有力的支撑；  
-* 标准化的资产更有利于初始化、检索、解析等操作的设计，开发者无需在如何与不同资产 交互上消耗工作量，只需遵循标准定义的规范即可，因此能够将注意力更加专注地投入资产内容本身的设计上。  
+* Non-homogeneous asset standardization guarantees the standardization of definition, format, and structure in an asset’s life cycle. The high compatibility and interpretability between standardized digital assets enable them to provide a foundation for the exchange in the third-party non-homogeneous digital asset;  
+* Standardized non-homogeneous assets can eliminate the redundant custom structure analysis, and improves the efficiency and capacity of chain network operation;  
+* Standardized assets are more conducive to the design of initialization, retrieval, analysis, and other operations, saving developers the need to consuming the workload on interacting with different assets so that they can just follow the standard definitions and focus more on the design of the asset content itself.  
 
-  以ERC-721非同质数字资产标准为例，任何使用 ERC-721标准定义的非同数字资产都可以使用同 样模式的合约/服务完成解析、检索、修改，当操作对象为不同的 ERC-721 资产时，开发者甚至不需要修改合约/服务代码，只需要在接口调用中改变传入资产实例的识别信息即可完成对新资产的完全兼容。  
+  Taking ERC-721 standard as an example, any non-homogeneous digital asset defined by it can be analyzed, retrieved and modified using the same mode of contract/service. When the operating different ERC-721 assets object, the developer does not even need to modify the contract/service code but to change the identification information of the incoming asset instance in the interface call to complete the full compatibility of the new asset.  
 
-# 世界观系统
-## 游戏世界与世界观系统
+# Worldview System
+## Game World and the Worldview System
 
-  与传统游戏行业的概念不同，BCX 的区块链游戏并非完全相互独立的业务场景，每一个链游戏 可认为是一个游戏世界，而数个具有相似基本设定的游戏世界组合在一起即可以认为这几个游戏世 界拥有一个共同的世界观。  
+  Different from the concept of the traditional game industry, BCX's blockchain games are not completely independent business scenarios. Each blockchain game can be considered a game world, and several game worlds with similar basic settings can be considered to have a common worldview.  
   
-![图5](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/5.jpg)  
+![P5](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/5.jpg)  
 
-  世界观这一概念并非区块链游戏首创，现代游戏行业已经有许多游戏具备了这一特性，例如 《魔兽争霸》、《魔兽世界》、《炉石传说》、《风暴传说》拥有共同的暴雪宇宙世界观，其中有 相当部分的游戏道具、角色、资产是共通的，虽然这些资产在各自的游戏中有不同的具体属性、技 能等解释，但这些资产的设计基础源于共同的基本规则。  
+  The concept of worldview is not created by blockchain gaming, but a feature already shared by many modern games. For example, Warcraft, World of Warcraft, Hearthstone, and The Legend of Storm share a common worldview of Blizzard universe, in which a considerable part of game props, characters, and assets are common. Although these assets have a different explanation on specific attributes, skills, etc. in each game, the design of these assets stems from the common basic rules.  
   
-  区块链游戏的世界观是一种用于区分游戏故事设定、角色/道具/规则设定和效用范围的标识。游 戏道具在世界观中遵循统一的世界规范，能够通过支付迁移费用在本世界观下的不同游戏世界中迁 移，即游戏道具的“穿越”。  
+  The worldview of blockchain games is an identity that distinguishes between story settings and characters/items/rules settings and utility scope. Game items follow a unified specification in the worldview, and can be migrated and circulated in different game worlds under this worldview by paying the “migration fee”, which is the “travelling” of game props.  
 
-## 世界线穿越、多元宇宙与平行世界
+## Cross-World Item “Traveling”, Multiverse and Parallel World
 
-  游戏道具是一种用于链上游戏的非同质数字资产，而道具“穿越”世界线的过程即某一非同质数 字资产在同一世界观下不同游戏、业务里应用、变化的过程。  
+  Game items are a kind of non-homogeneous digital assets used in blockchain games. The process of items “travelling” across different worlds is that of applying and changing of a non-homogeneous digital asset in different games and services under the same worldview.  
   
-  1808 标准非同质资产提供了链上游戏设计多元宇宙/平行宇宙的可能性，不同的游戏世界观也是 不同的游戏宇宙，百家齐鸣的游戏世界观也将构成链上游戏的多元宇宙，这些宇宙内拥有可以自由流通的游戏道具，这些道具在不同游戏中被写上了不同的属性、技能等，它们各自存在又互不影 响，即“平行世界”中的道具设计。  
+  The 1808 Standard makes it possible for on-chain games to design the multiverse/parallel universe. Different game worldviews are also different game universes, which forms the multiverse of on-chain games. The game items in each universe can be freely circulated, and are written with different attributes, skills, etc. in different games. These items do not affect each other. This is what we mentioned as the item design in the "parallel world".  
   
-  可扩展的自定义数据能够让游戏设计者创造各具特色的游戏资产，互不干涉的域数据设计让游 戏资产在“穿越”世界、宇宙时允许被赋予不受干扰的全新属性，同时也为游戏间数据联动（例如 技能增益/减益）设计提供了可能，下图将是一个链上游戏资产在穿越世界线/平行世界的示例：  
+  Scalable custom data enables game designers to create unique game assets. Non-interfering zone data allows game assets to be given new properties that are an immune while "travelling" the world and the universe, while also making it possible of data linkage between games (such as skill gain/reduction). The image below is an example of the on-chain game assets travelling across the world line/parallel world:  
   
-![图6](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/6.jpg)  
+![P6](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/6.jpg)  
 
-  根据游戏运营设计，1808 标准非同质资产支持通过特定的第三方有偿穿越世界线的设计，这一 机制有助于游戏运营在道具平衡性和资产流通量控制上作出符合需求的设计。  
+  According to the game operation design, the 1808 non-homogeneous assets standard support the design of paid travelling across the world line through a specific third-party. This is helpful for game operation to meet the needs of item balance and asset circulation control.  
   
-## 世界观系统中的数据管控方式
+## Data Management in the Worldview System
 
-  1808 标准非同质数字资产在链上完成初始定义并通过智能合约操作，且 1808 标准本身包含较为 复杂的数据结构和组合设计，因此世界观系统下的资产数据安全设计显得更为重要，Cocos-BCX 针对链上数据操作过程中可能发生的风险和隐患进行了分析，并着手修复和改进。  
+  1808 non-homogeneous digital assets standard is defined on chain initially and operated via smart contract. The complicated data structure and combination design of the 1808 Standard makes the design of asset data security more important. Therefore, COCOS-BCX analyzes the risks and potential dangers that may occur during the operation of data on chain, and starts to make improvements.  
 
-* 资产与其他数据分离  
-  分离的数据存储可以保证资产所有者拥有对资产的完全所有权，而若合约与资产使用合并 的存储，则特定的合约可以在合约开发者的权限下调用合约拥有的他人资产，这是非常不 安全的。在 Cocos-BCX 中，同质、非同质资产和智能合约的数据均为分离存储式设计， 这除了有助于减少数据流转消耗、提高链效率外，是一种更具备数据安全性的设计。  
+* Separately Stored Assets and Contract Data  
+  Separate data storage can ensure that the asset owner has full ownership of the asset. If the contract and the asset data are stored together, the specific contract can call the assets owned by the contract under the authority of the contract developer, which is very unsafe. In COCOS-BCX, the data of homogeneous, non-homogeneous assets and smart contracts are stored separately, which is a more data-safe design, in addition to helping to reduce data flow consumption and improve blockchain efficiency;  
   
-* 带有身份核验的合约执行验证机制  
-  对于涉及敏感操作的合约函数，Cocos-BCX 允许开发者定义具有身份验证的合约执行机 制，设有验证的合约函数只会在满足要求的调用者调取时才会执行，避免黑客恶意执行特 定合约接口进行非法资产操作的风险；  
+* Contract Verification Mechanism with Identity Authentication  
+  For contract functions involving sensitive operations, COCOS-BCX allows developers to define contract execution mechanisms with identity authentication. A contract function with authentication mechanism will only be executed when the caller meets the requirements, avoiding the risk of hackers maliciously executing a specific contract interface for illegal asset operations;  
   
-* 以域设计对合约权限进行控制  
-  合约能够获取 1808 标准资产扩展数据中的所有域数据，但对资产数据的修改将被限定在标 记为当前合约的域中，即 A 游戏可以知道资产在 B 游戏中的属性数据，但对资产的改动只 会保存在 A域中，且 A合约无法修改 B域中的任何数据；  
+* Control Contract Permissions by Zone Data  
+  The contract is able to obtain all zone data in the 1808 Standard extended asset data, but changes to the asset data will be limited to the zone marked as current contract. That is, Game A can obtain the attribute data of the asset in Game B, but the changes to the asset will only be saved in zone A, and contract A cannot modify any data in zone B;  
   
-* 资产所有者对域数据的管理模式  
-  域数据随着游戏的增加不断补充，而追加的域数据过多或收到恶意合约故意追加无效域数 据时会影响业务的执行效率，导致用户资产数据冗余，为了避免这种情况的出现，1808 标 准资产允许用户删除资产扩展数据中特定的域，但此权限仅赋予用户删除域数据的权力而 不包括修改这些域数据的权力，以防用户通过修改这些数据而作弊。  
+* Assets Owner Management Mode for Zone Data  
+  The zone data is continuously supplemented with the growth of games. The excessively added zone data or the invalid zone data added by the malicious contract will affect the execution efficiency of the business, resulting in asset data redundancy. To avoid this situation, the 1808 Standard allows the user to delete a specific zone in the extended asset data. However, this only gives the user the right to delete the zone data without including the right to change the zone data, in case the user cheats by changing the data.  
 
-# 1808 标准与世界观系统应用范例
+# Application Examples of COCOS 1808 Standard and Worldview System
 
-  本章将主要说明在 Cocos-BCX 链中，使用合约对 1808 非同质数字资产操作，以及世界观内非 同质数字资产如何穿越、联动的示例，更多介绍请参阅《Cocos-BCX智能合约使用引导》。  
+  This chapter will describe the operation of contract on BCX-NHAS-1808 standard digital assets, and how the non-homogeneous assets travel and link in different worldviews in COCOS-BCX chain. For more information, please refer to the `COCOS-BCX Smart Contract User Guide`.  
   
-## 合约对 1808 标准资产的操作
-### 非同质资产所有权转移
-#### 非同质资产转移 – 调用者
+## Operation of Contract on COCOS 1808 Standard Digital Asset 
+### Transfer of Non-Homogenous Assets Ownership
+#### Transfer of Non-homogenous Assets-Caller
 
-* 函数原型  
+* Original Function  
 void transfer_nht_from_caller(string to, string token_hash_or_id)  
-* 调用说明  
-从合约调用者转移非同质资产到账户 to  
-* 参数说明  
-to：目标账户，token_hash_or_id：指定的非同质资产 hash值或者 id编号
+* Calling Description  
+Transfer non-homogeneous assets from the contract caller to the account to  
+* Parameter Description  
+to：target account, token_hash_or_id: the hash value or ID number of the pointed non-homogeneous assets
 
-#### 非同质资产转移 – 所有者
+#### Transfer of Non-homogenous Assets-Owner
 
-* 函数原型  
+* Original Function  
 void transfer_nht_from_owner(string to, string token_hash_or_id) 
-* 调用说明  
-从合约所有者转移非同质资产到账户 to  
-* 参数说明  
-to：目标账户，token_hash_or_id：指定的非同质资产 hash值或者 id编号  
+* Calling Description  
+Transfer non-homogeneous assets from the contract owner to the account to  
+* Parameter Description  
+to：target account, token_hash_or_id: the hash value or ID number of the pointed non-homogeneous assets  
 
-### 修改非同质资产数据(特定数据域内)
-#### 非同质资产转移 – 所有者
+### Modify Non-Homogeneous Asset Data (within a Specific Data Zone)
+#### Transfer of Non-homogenous Assets-Owner
 
-* 函数原型  
+* Original Function  
 void nht_describe_change(string nht_hash_or_id, string key, string value)  
-* 调用说明  
-修改非同质资产的合约相关描述，修改部分为合约对应的域  
-* 参数说明  
-token_hash_or_id：指定的非同质资产 hash 值或者 id 编号，key：描述项索引，value：索引 对应的描述信息  
+* Calling Description  
+Modify the contract-related description of the non-homogeneous assets, and the modified part is the corresponding zone of the contract  
+* Parameter Description  
+token_hash_or_id: the hash value or ID number of the pointed non-homogeneous assets;  
+Key: the index of discribed item;  
+value: the corresponding description of the index  
 
-## 场景范例
-### 游戏(合约)内强化装备
+## Scene Examples
+### Upgrading Gear in Game(Contract)
  
-本例是一个游戏中强化装备属性的合约函数代码范例，这个函数代表常见的 RPG 游戏中对装备 的强化动作，玩家可以选择需要升级的装备与升级的属性类别(STR 力量、AGI 敏捷、INT 智力等)， 游戏服务会解析域数据并计算出该属性升级的目标属性值传入此合约函数，由于 COCOS-BCX 的合 约系统支持内源随机过程，因此可以将这一场景中升级的成功率以随机方式展现。  
+This is to introduce an example of the contract function code that enhances the equipment attributes in a game. This function represents a hardened action on the equipment in a common RPG game. Players can choose the equipment to be upgraded and the upgraded attribute category (STR, AGI, or INT, etc.), the game will parse the domain data and calculate the target value and input into this contract function. Since the COCOS-BCX contract system supports the internal random process, the success rate of the upgrade in this scenario can be displayed in a random manner.  
 
 ```Lua
---合约函数：装备升级 
--- equipment_id:装备资产 ID 
--- upgrade_name:升级属性项名称 
--- target_value:目标属性值 
--- success_rate:本次升级成功率(1-100) 
-function equipment_upgrade( equipment_id, upgrade_name, target_value, success_rate)  --对升级项名称的判断 
+-- contract function：upgrade gear 
+-- equipment_id: the ID of equipment 
+-- upgrade_name: the name of the upgrading equipment 
+-- target_value: the value of target 
+-- success_rate: the success rate of upgrade (1-100)  
+function equipment_upgrade( equipment_id, upgrade_name, target_value, success_rate)  --the determination to the name of upgrade items 
  assert(upgrade_name=='STR' or upgrade_name=='AGI' or upgrade_name=='INT', 'upgrade name error') 
- --对升级成功率输入的判断 
+ --the determination to the input of  upgrade success rate  
  assert(success_rate>=0 and success_rate<=100, 'success rate should between 0 and 100') 
   
- --升级成功判定，通过内源随机函数获取随机概率 
+ --upgrade success determined, obtaining random probability through internal random function 
  local success_judge=random()%100 
  if(success_judge<=success_rate)then 
-  --将目标属性值写入域数据 
+  --write the target value into the zone data 
   nht_describe_change( equipment_id, upgrade_name, target_value) 
  end   
 end 
 ```
-### 道具在世界中穿越并做数值联动
+### Game Items Travelling the Game Worlds and Making a Numerical Linkage
 
-  本例是一个游戏道具穿越游戏世界的范例。本范例场景下，游戏服务有偿授权玩家道具穿越到 自己的游戏世界，玩家通过支付穿越所需的资产后游戏服务将允许玩家的指定道具进入到游戏世界（合约系统）中。  
+  This is to introduce an example of the game items travelling the game worlds. In this example scenario, the game service authorizes the player's items to travel into their own game world with a fee.After the player passes the required assets by paying a fee, the game service will allow the player's items to enter the game world (contract system).   
   
-  游戏服务在玩家道具的域信息中提取需要的信息并提交至合约，由于与之前的游戏有联动活动，开发者在合约中设计了与以往游戏技能联动的设计（如下文代码中所示'eyes of hawk'等），使穿越到本世界中的道具一开始便可获得技能属性等。  
+  The game service collects the required information from the zone data of the player’s items and submits it to the contract. Since there is a linkage with the previous game, the developer designs a linkage with the previous game skills (e.g. the 'eyes of hawk' shown in the following code), so that the items that travel to the game world can be equipped with the skill attributes.  
   
 ```lua
-  --合约函数：初始化穿越世界的游戏道具 
-  -- item_id:道具 ID 
-  -- original_skill:原游戏中的技能信息 
-  -- add_skill:本游戏中追加联动技能 
-  -- add_description:在本游戏域数据中追加的描述 
+  --Contract function: initialize game items that travel across the game world 
+  -- item_id: the ID of equipment 
+  -- original_skill:the skill info of original game 
+  -- add_skill: the added skill in this game 
+  -- add_description: the added description in the domain data of  this game 
   function init_item_from_another_world( item_id, original_skill, add_skill, add_description)  
-  --信息的非空判断  
+  --non-empty determination of information  
   assert(original_skill!=nil,'null original skill info')  
   assert(add_skill!=nil,'null add skill info')  
   assert(add_description!=nil,'null description info')   
   local add_skill_value='null'  
-  --对原游戏中的技能信息的判断并得出本游戏中联动的技能信息  
+  --the determination of the skill info of original game and calculate the linked skill info od this game  
   local switch={   
       ['eyes of hawk']=function() add_skill_value='{"VIT_UP":25}' end   
       ['heart of lion']=function() add_skill_value='{"STR_UP":50}' end   
@@ -328,7 +331,7 @@ end
   local res=switch[original_skill]  
   if(res)then   
       res()   
-      --将联动的技能信息更新到域数据中   
+      --updated the linked skill into domain data   
       nht_describe_change( item_id, add_skill, add_skill_value)   
       nht_describe_change( item_id, 'another_world_message', add_description)  
   else   
@@ -336,46 +339,46 @@ end
   
 ```
 
-## 复杂业务模式的实现
+## Implementation of Complex Business Model
 
-  改进的 Cocos-BCX 链新增了多种原子 OP 和数据结构用于实现可能的新型业务，结合自身合约系统，开发者能轻松实现链上的复杂金融业务模式，例如：资产租赁、抵押、典当等。这些新型业务模式将极大改善传统链系统经济模式单一缺少流动性的弊端，进一步活化市场行为。下面简单介绍在BCX中实现这三种业务模式的设计思路。  
+  The updated Cocos-BCX chain adds a variety of atomic OP and data structures to enable possible new business. With the contract system, developers can easily implement complex financial business models on the blockchain, such as asset leasing, mortgages, pawns, and so on. These new business models will greatly improve the shortcomings of the lack of liquidity in the economic model of the traditional blockchain system to further activate market behaviors. Below is a brief introduction to the design of these three business models in BCX.  
+  
+### Lease 
 
-### 租赁
+![P7](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/7.jpg)  
 
-![图7](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/7.jpg)  
+Contract Design:  
+* Define the functions for the leasing business, such as initiating leases, transferring use right, reclaiming use right, inventory status queries, and inventory updates.   
+* Define a pool of assets available for lease, with information such as the price tag.  
 
-合约设计：  
-* 定义发起租赁、转移使用权、收回使用权、库存状态查询、库存更新等租赁业务各流程的函数。  
-* 定义一个可供租用的资产池，带有标价等信息。  
+Process:  
+* The owner adds asset information to be rented through the inventory update function in the contract and specifies the rent/calculation rules;  
+* The lease is established after the tenant pay the rent via the function that initiates the lease;  
+* The contract defines the black & white list of asset use right by transferring the use right function and transfers the use right to the tenant. The contract then transfers the rent to the owner's account, marks the status of the inventory asset as leased, and defines a timed task—calling the use right reclaim function upon expiration;  
+* When the timed task expires, the use right reclaim function of the contract is called to transfer the asset use right back to the owner.  
 
-流程：  
-* 所有者在合约中通过库存更新函数加入需要出租的资产信息，并规定租金/计算规则；  
-* 租户通过发起租赁的函数交纳租金等资产后租约成立；  
-* 合约通过转移使用权函数定义资产使用权黑白名单并将使用权转交至租户，随后将租金转 至所有者账户，将库存资产的状态标记为已出租，同时定义一个定时任务——在到期时调 用收回使用权函数；  
-* 定时任务到期时，调用合约收回使用权函数，将资产使用权转回所有者。  
+### Pledge
 
-### 抵押
+![P8](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/8.jpg)  
 
-![图8](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/8.jpg)  
+Contract Design:  
+* Define the functions of the pledging business, such as initiating pledges, transferring ownership, reclaiming use right, collateral status query, and setting up pledge-backed lists;  
+* Define a collateral record structure with information on assets available for pledging and that on pledged assets.  
 
-合约设计：  
-* 定义发起抵押、转移所有权、收回使用权、抵押品状态查询、设置可抵押清单等抵押业务 各流程的函数；  
-* 定义一个抵押物记录结构，带有可供抵押资产的信息与已抵押当的资产信息。  
+Process:  
+* The pledgee sets the information of the items available for a pledge by setting the collateral list function, marking the pledge price or calculation rules, etc.;  
+* The pledger transfers the ownership of the asset to the pledgee through the function that initiates the pledge, receives the deposit paid by the pledgee, updates the list of pledge records, and releases a timed task – the use right is transferred according to the status of redemption;  
+* When the timed task expires, if the deposit payment and other conditions are not met, the contract's reclaim function is called to transfer the use right of the asset to the pledgee account through the use right change function.  
 
-流程：  
-* 抵押权人通过设置可抵押清单函数设置可供抵押的物品信息，标记抵押价格或计算规则等；  
-* 抵押人通过发起抵押的函数将资产所有权转至抵押权人，并收到抵押权人支付的押金，更 新抵押拼记录清单中，同时发布一个定时任务——期限到达时根据赎回与否转移物品使用权；  
-* 定时任务到期时，若押金支付等条件未满足，则调用合约的收回使用权函数，通过使用权 变更函数将资产使用权转到抵押权人账户，若完成赎回，则调用合约的转移所有权函数， 将所有权转还至抵押人。  
+### Pawn
 
-### 典当
+![P9](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/9.jpg)  
 
-![图9](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/9.jpg)  
+Contract Design:  
+* Define the functions of the pawn business, such as initiating pawn, transferring the use right, reclaiming ownership, the status query of a pawned item, and setting up a pawn list;  
+* Define a pawn record structure with information for assets available for pawning and information on pawned assets.  
 
-合约设计： 
-* 定义发起典当、转移使用权、收回所有权、当品状态查询、设置典当清单等典当业务各流 程的函数；  
-* 定义一个典当品记录结构，带有可供典当资产的信息与已经典当的资产信息。  
-
-推演流程：  
-* 典当权人通过设置典当清单函数设置可供典当的物品信息，标记典当价格或计算规则等；  
-* 典当人通过发起典当的函数将资产使用权转至典当权人，并收到典当权人支付的押金，更 新典当清单中的记录，同时发布一个定时任务——根据需要可以设计为定期返还押金/按期 支付利息/两者兼有的模式；  
-* 定时任务到期时，若押金支付等条件未满足，则调用合约的收回所有权函数，通过所有权变更 OP 将资产所有权转到典当权人账户，若达成条件，则通过使用权变更 OP 将使用权转移至典当人。  
+Process:  
+* Pawnbroker sets the information of the items available for a pawn by setting the pawn list function, marking the pawn price or calculation rules, etc.;  
+* The pawnor transfers the ownership of the asset to the Pawnbroker through the function that initiate the pawn, receives the deposit paid by the pawnor, updates the list of pawn records, and releases a timed task – It can be designed to return the deposit on a regular basis / pay interest on schedule / both modes as needed;  
+* When the scheduled task expires, if the conditions such as the deposit payment are not met, the contract's ownership reclaim function is called to transfer the ownership of the asset to the pawnbroker's account through the ownership change OP. If the condition is met, the use right is transferred to the pawnor by the use right change OP.  
