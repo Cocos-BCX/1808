@@ -1,6 +1,6 @@
 [中文](https://github.com/Cocos-BCX/1808/blob/master/README_cn.md)
 
-# COCOS 1808 BCX-NHAS-1808 Standard & Worldview System v1.0  
+# COCOS 1808 Standard & Worldview System v1.0  
 
 
 - [Foreword](#Foreword)
