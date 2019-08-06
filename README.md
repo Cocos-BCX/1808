@@ -267,7 +267,7 @@ Transfer non-homogeneous assets from the contract owner to the account to
 * Parameter Description  
 to：target account, token_hash_or_id: the hash value or ID number of the pointed non-homogeneous assets  
 
-### Modify Non-Homogeneous Asset Data (within a Specific Data Zone)
+### Modify Non-Homogeneous Assets Data (within a Specific Data Zone)
 #### Transfer of Non-homogenous Assets-Owner
 
 * Original Function  
@@ -280,7 +280,7 @@ Key: the index of discribed item;
 value: the corresponding description of the index  
 
 ## Scene Examples
-### Upgrading Gear in Game(Contract)
+### Upgrading Gear in Game (Contract)
  
 This is to introduce an example of the contract function code that enhances the equipment attributes in a game. This function represents a hardened action on the equipment in a common RPG game. Players can choose the equipment to be upgraded and the upgraded attribute category (STR, AGI, or INT, etc.), the game will parse the domain data and calculate the target value and input into this contract function. Since the Cocos-BCX contract system supports the internal random process, the success rate of the upgrade in this scenario can be displayed in a random manner.  
 
