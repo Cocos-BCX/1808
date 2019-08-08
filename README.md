@@ -188,7 +188,7 @@ inter-zone value | inner_value| string
 
 As shown in the Cocos-BCX whitepaper, there are four stages of blockchain gaming:   
 
-1. ungible Token as a Settlement Measure of In-Game Economy;   
+1. Fungible Token as a Settlement Measure of In-Game Economy;   
 2. Free Exchange of Game Coins and Assets;   
 3. Key Game Algorithms Running on Blockchain;   
 4. The Game as a whole Running on the Blockchain.   
