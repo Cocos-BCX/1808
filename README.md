@@ -65,7 +65,7 @@
 
   The extended data area is combined in the unit of zone. Each zone is bound to one or several contracts that are only responsible for itself. It represents a data area that is unique to the use case (game universe). The key-value pair information after the zone is unfolded represents a series of game business related data. Data between different zones can be read but not written mutually, that is, data changes in different use cases do not affect each other. The "universe wall" of the game will prevent these properties from affecting other universes, which will not result in the situation of "equipment downgraded in game A is also downgraded in game B".   
 
-#### Multiverse  Compatible Design
+#### Multiverse Compatible Design
 
   The non-homogeneous digital assets defined by the 1808 Standard allow digital assets under the same universe to be used in different business scenarios. Therefore, there requires certain rules to balance the asset value (capability value) among different business entities.  
   
@@ -206,8 +206,8 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 
   Taking ERC-721 standard as an example, any non-homogeneous digital asset defined by it can be analyzed, retrieved and modified using the same mode of contract/service. When the operating different ERC-721 assets object, the developer does not even need to modify the contract/service code but to change the identification information of the incoming asset instance in the interface call to complete the full compatibility of the new asset.  
 
-# Multiverse  System
-## Game Universe and the Multiverse  System
+# Multiverse System
+## Game Universe and the Multiverse System
 
   Different from the concept of the traditional game industry, BCX's blockchain games are not completely independent business scenarios. Each blockchain game can be considered a game universe, and several game universes with similar basic settings can be considered to have a common multiverse.  
   
