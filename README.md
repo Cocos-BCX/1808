@@ -85,9 +85,9 @@ As for the 1808 Standard, when an asset instance is referenced in a new business
 
 ![P1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1_en.png)
 
-  Game props and equipment may be composed of multiple components and items. Therefore, the non-homogeneous digital assets of blockchain games should also be able to be nested and contained. In this case, each non-homogeneous asset can be composed of multiple non-homogeneous assets. The main asset can contain one or more sub assets, and the sub assets can further contain other sub assets.   
+  Game props and equipment may be composed of multiple components and items. Therefore, the non-homogeneous digital assets of blockchain games should also be able to be nested and contained. In this case, each non-homogeneous asset can be composed of multiple non-homogeneous assets. The main asset can contain one or more sub-assets, and the sub-assets can further contain other sub-assets.   
   
-  For game scenarios with equipment construction or combination, the 1808 Standard provides a design that supports asset portfolios. The extended data contains the zone that records the combination relationship. The zone data records the information of the nested relationship when the asset is combined. Before the relationship is terminated, the ownership of nested sub assets will not be able to be transferred.   
+  For game scenarios with equipment construction or combination, the 1808 Standard provides a design that supports asset portfolios. The extended data contains the zone that records the combination relationship. The zone data records the information of the nested relationship when the asset is combined. Before the relationship is terminated, the ownership of nested sub-assets will not be able to be transferred.   
 
 #### Support Complex Design of Circulation Model
 
@@ -140,13 +140,13 @@ Based on BCX contract system, 1808 Standard can easily deliver the business logi
 
   `asset_id_type`: The asset_id_type is designed to maintain the uniqueness in the network, which requires little for the ID length. However, from the perspective of multi-network compatibility, the maximum sample size of the ID should cover the maximum expected number of non-homogeneous digital asset instances in the existing decentralized distributed account-based network. For example, if the asset ID in the Ethereum network is a 40-byte hash address and the maximum number of samples that can be supported is 1.462*10^48, hash addresses or other unique identification approaches with a sample size greater than this value is considered when designing the asset ID in the network to which this standard is applied.   
   
-  `world_view`: The world_view_type contains the multiverse ID applied to the asset and the currency corresponding to the universe, where the multiverse ID is a unique identifier for the network, and the currency in circulation is the unique symbol of the currency (the network using the symbol as a unique credential) or the address (the network using the address as the unique credential).  
+  `world_view`: The world_view field type is world_view_type, it contains the multiverse ID applied to the asset and the currency corresponding to the universe, where the multiverse ID is a unique identifier for the network, and the currency in circulation is the unique symbol of the currency (the network using the symbol as a unique credential) or the address (the network using the address as the unique credential).  
   
-  `nh_asset_owner` and `nh_asset_creator`: The asset_owner and Asset_creator fields type is account_id_type, which should be of a unique and sufficient sample size.   
+  `nh_asset_owner` and `nh_asset_creator`: The nh_asset_owner and nh_asset_creator fields type is account_id_type, which should be of a unique and sufficient sample size.   
   
-  `nh_asset_create_time`: The asset_create_time field type is time_point_sec, which is used to identify the date when this asset instance is created. It is determined by the timestamp of the ledger when the instantiation transaction is completed.   
+  `nh_asset_create_time`: The nh_asset_create_time field type is time_point_sec, which is used to identify the date when this asset instance is created. It is determined by the timestamp of the ledger when the instantiation transaction is completed.   
   
-  `nh_asset_description`: The asset_description field type is a string, which is a piece of data that can be used to express the basic attributes of an asset instance. The data can be processed in a custom parsing or encryption manner to match specific business entities and application scenarios.   
+  `nh_asset_description`: The nh_asset_description field type is a string, which is a piece of data that can be used to express the basic attributes of an asset instance. The data can be processed in a custom parsing or encryption manner to match specific business entities and application scenarios.   
   
   `limit_list`: The limit_list field type is vector<contract_id_type>，which is a list used to controll the scope of use of the asset by being set in whitelist mode or blacklist mode according to the restriction mode specified in limit_type. The zone data of the asset can only be modified in the game added in the list in whitelist mode.  
   
@@ -163,13 +163,13 @@ zone data | session_data | map<string, string>
 inter-zone key | inner_key | string  
 inter-zone value | inner_value| string   
 
-  `Mod_data`: The Mod_data field type is an id list, which is a relationship table consisting of a list of identifiers of main asset IDs and sub asset IDs, which are used to describe the combination and nesting relationship of assets in different business entities.   
+  `mod_data`: The mod_data field type is an id list, which is a relationship table consisting of a list of identifiers of main asset IDs and sub-asset IDs, which are used to describe the combination and nesting relationship of assets in different business entities.   
   
-  `describe_with_contract`: The World_view field type is a map, which is a key-value pair mapping table composed of zone identifiers and zone data. The zone identifier is a type identifier of the business entity, corresponding to one or several contracts, and all data interactions of the business instance for this asset instance will be performed in this zone.   
+  `describe_with_contract`: The describe_with_contract field type is a map, which is a key-value pair mapping table composed of zone identifiers and zone data. The zone identifier is a type identifier of the business entity, corresponding to one or several contracts, and all data interactions of the business instance for this asset instance will be performed in this zone.   
   
-  `Session_key`: The Session_key field type is contract_id_type, which is the id of one or more core contracts that the business should contain. The id should be as unique and sufficient as the other unique identifiers. 
+  `session_key`: The Session_key field type is contract_id_type, which is the id of one or more core contracts that the business should contain. The id should be as unique and sufficient as the other unique identifiers. 
   
-`Session_data`: The session_data field type is a map, which consists of the inner_key and the inner_value. The specific data of the key and value is defined by the business entity responsible for this zone, which may include structured or encrypted strings as its data according to its needs.  
+`session_data`: The session_data field type is a map, which consists of the inner_key and the inner_value. The specific data of the key and value is defined by the business entity responsible for this zone, which may include structured or encrypted strings as its data according to its needs.  
 
 # Non-Homogeneous Digital Assets Standard
 ## The Definition of  Non-Homogeneous Digital Assets
