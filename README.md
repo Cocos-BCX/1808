@@ -1,6 +1,6 @@
 [中文](https://github.com/Cocos-BCX/1808/blob/master/README_cn.md)
 
-# 1808 Standard & Worldview System v1.0  
+# 1808 Standard & Multiverse System v1.0  
 
 
 - [Foreword](#Foreword)
@@ -9,8 +9,8 @@
   * [COCOS 1808 Standard](#COCOS-1808-Standard)
   * [Features](#Features)
     + [Universally Used Unique Value Expression](#Universally-Used-Unique-Value-Expression)
-    + [Cross Use Cases without Affecting Each Other \(World Wall\)](#Cross-Use-Cases-without-Affecting-Each-Other-World-Wall)
-    + [Worldview Compatible Design](#Worldview-Compatible-Design)
+    + [Cross Use Cases without Affecting Each Other \(Universe Wall\)](#Cross-Use-Cases-without-Affecting-Each-Other-Universe-Wall)
+    + [Multiverse Compatible Design](#Multiverse-Compatible-Design)
     + [Cross-Network and Cross-Standard Compatible Design](#Cross-Network-and-Cross-Standard-Compatible-Design)
     + [Asset Owners are Allowed to Discard Specific Zone Data](#Asset-Owners-are-Allowed-to-Discard-Specific-Zone-Data)
     + [Assets Used as an Embedded or Combined Module on the Blockchain](#Assets-Used-as-an-Embedded-or-Combined-Module-on-the-Blockchain)
@@ -22,12 +22,12 @@
   * [The Definition of Non-Homogeneous Digital Assets](#The-Definition-of-Non-Homogeneous-Digital-Assets)
   * [The Significance of Non-Homogeneous Digital Assets to Games](#The-Significance-of-Non-Homogeneous-Digital-Assets-to-Games)
   * [The Reasons to Standardized Non-Homogeneous Assets](#The-Reasons-to-Standardized-Non-Homogeneous-Assets)
-- [Worldview System](#Worldview-System)
-  * [Game World and the Worldview System](#Game-World-and-the-Worldview-System)
-  * [Cross-World Item “Traveling”, Multiverse and Parallel World](#Cross-World-Item-Traveling-Multiverse-and-Parallel-World)
-  * [Data Management in the Worldview System](#Data-Management-in-the-Worldview-System)
-- [Application Examples of COCOS 1808 Standard and Worldview System](#Application-Examples-of-COCOS-1808-Standard-and-Worldview-System)
-  * [Operation of Contract on COCOS 1808 Standard Digital Assets](#Operation-of-Contract-on-COCOS-1808-Standard-Digital-Assets)
+- [Multiverse System](#Multiverse-System)
+  * [ Game Universe and the Multiverse System](#Game-Universe-and-the-Multiverse-System)
+  * [Cross-Universe Item “Traveling”, Multiverse and Parallel Universes](#Cross-Universe-Item-Traveling-Multiverse-and-Parallel-Universes)
+  * [Data Management in the Multiverse System](#Data-Management-in-the-Multiverse-System)
+- [Application Examples of 1808 Standard and Multiverse System](#Application-Examples-of-1808-Standard-and-Multiverse-System)
+  * [Operation of Contract on 1808 Standard Digital Assets](#Operation-of-Contract-on-1808-Standard-Digital-Assets)
     + [Transfer of Non-Homogenous Assets Ownership](#Transfer-of-Non-Homogenous-Assets-Ownership)
       - [Transfer of Non-Homogenous Assets-Caller](#Transfer-of-Non-Homogenous-Assets-Caller)
       - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets-Owner)
@@ -35,7 +35,7 @@
       - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets-Owner)
   * [Scene Examples](#Scene-Examples)
     + [Upgrading Gear in Game \(Contract\)](#Upgrading-Gear-in-Game-Contract)
-    + [Game Items Travelling the Game Worlds and Making a Numerical Linkage](#Game-Items-Travelling-the-Game-Worlds-and-Making-a-Numerical-Linkage)
+    + [Game Items Travelling the Game Universe and Making a Numerical Linkage](#Game-Items-Travelling-the-Game-Universe-and-Making-a-Numerical-Linkage)
   * [Implementation of Complex Business Model](#Implementation-of-Complex-Business-Model)
     + [Lease](#Lease)
     + [Pledge](#Pledge)
@@ -44,32 +44,32 @@
 # 1. Foreword
 ## Introduction
 
-   COCOS 1808 Standard (hereinafter referred to as "1808 Standard") is a non-homogeneous digital assets standard that applied to decentralized distributed ledger network. As the perfect way to represent various non-fungible items, non-homogeneous digital assets can cover the field of game items, gears, characters, map data, and even expansion pack in the game industry. This manual also focus on the worldview system based on 1808 Standard, such as world traveling, multiverse, and etc.  
+   COCOS 1808 Standard (hereinafter referred to as "1808 Standard") is a non-homogeneous digital assets standard that applied to decentralized distributed ledger network. As the perfect way to represent various non-fungible items, non-homogeneous digital assets can cover the field of game items, gears, characters, map data, and even expansion pack in the game industry. This manual also focus on the multiverse system based on 1808 Standard, such as universe traveling, multiverse, and etc.  
    
-   This manual was created to help readers to understand and apply the 1808 Standard and worldview system, and please be aware of that descriptions on the manual will not always be consistent with the actual situation. Please update the manual or contact the authorities for the latest information if inconsistency happens.  
+   This manual was created to help readers to understand and apply the 1808 Standard and multiverse system, and please be aware of that descriptions on the manual will not always be consistent with the actual situation. Please update the manual or contact the authorities for the latest information if inconsistency happens.  
    
 ## Purpose of Writing
 
-   This manual was provided for users who working on game development, assets design and distribution, and game world design and management on Cocos-BCX blockchain network. This content has been developed to provide instruction to the 1808 Standard and its usage specifications so users can design a user-friendly digital assets and game world on the BCX network.  
+   This manual was provided for users who working on game development, assets design and distribution, and game universe design and management on COCOS-BCX blockchain network. This content has been developed to provide instruction to the 1808 Standard and its usage specifications so users can design a user-friendly digital assets and game universes on the BCX network.  
 
 ## COCOS 1808 Standard
 
-   Combining the needs of gaming industry, we reviewed a number of existing non-homogeneous digital asset standards and defined BCX-NHAS-1808 to be the one to standardize all non-homogeneous digital assets that published and circulated on the BCX chain.  
+   Combining the needs of gaming industry, we reviewed a number of existing non-homogeneous digital asset standards and defined COCOS 1808 to be the one to standardize all non-homogeneous digital assets that published and circulated on the BCX chain.  
 
 ### Features
 #### Universally Used Unique Value Expression
 
   The non-homogeneous digital assets defined by the 1808 Standard support a variety of data customizing and scaling approaches. They are compatible with different asset types in various games, and can be used as a general expression for various game data.   
 
-#### Cross Use Cases without Affecting Each Other (World Wall)
+#### Cross Use Cases without Affecting Each Other (Universe Wall)
 
-  The extended data area is combined in the unit of zone. Each zone is bound to one or several contracts that are only responsible for itself. It represents a data area that is unique to the use case (game world). The key-value pair information after the zone is unfolded represents a series of game business related data. Data between different zones can be read but not written mutually, that is, data changes in different use cases do not affect each other. The "world wall" of the game will prevent these properties from affecting other worlds, which will not result in the situation of "equipment downgraded in game A is also downgraded in game B".   
+  The extended data area is combined in the unit of zone. Each zone is bound to one or several contracts that are only responsible for itself. It represents a data area that is unique to the use case (game universe). The key-value pair information after the zone is unfolded represents a series of game business related data. Data between different zones can be read but not written mutually, that is, data changes in different use cases do not affect each other. The "universe wall" of the game will prevent these properties from affecting other universes, which will not result in the situation of "equipment downgraded in game A is also downgraded in game B".   
 
-#### Worldview Compatible Design
+#### Multiverse Compatible Design
 
-  The non-homogeneous digital assets defined by the 1808 Standard allow digital assets under the same worldview to be used in different business scenarios. Therefore, there requires certain rules to balance the asset value (capability value) among different business entities.  
+  The non-homogeneous digital assets defined by the 1808 Standard allow digital assets under the same universe to be used in different business scenarios. Therefore, there requires certain rules to balance the asset value (capability value) among different business entities.  
   
-As for the 1808 Standard, when an asset instance is referenced in a new business scenario, a relative attribute is determined, which takes a certain other zone data as references, representing the basic value of the asset. The data can be identified in other business entities under the same worldview. When the asset instance enters different business entities, the value in the business entity is determined according to this attribute, and other attributes such as equipment skills are supplemented by the zone data form of the business entity.   
+As for the 1808 Standard, when an asset instance is referenced in a new business scenario, a relative attribute is determined, which takes a certain other zone data as references, representing the basic value of the asset. The data can be identified in other business entities under the same universe. When the asset instance enters different business entities, the value in the business entity is determined according to this attribute, and other attributes such as equipment skills are supplemented by the zone data form of the business entity.   
 
 #### Cross-Network and Cross-Standard Compatible Design
 
@@ -85,9 +85,9 @@ As for the 1808 Standard, when an asset instance is referenced in a new business
 
 ![P1](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/1_en.png)
 
-  Game props and equipment may be composed of multiple components and items. Therefore, the non-homogeneous digital assets of blockchain games should also be able to be nested and contained. In this case, each non-homogeneous asset can be composed of multiple non-homogeneous assets. The parent asset can contain one or more child assets, and the child assets can further contain other child assets.   
+  Game props and equipment may be composed of multiple components and items. Therefore, the non-homogeneous digital assets of blockchain games should also be able to be nested and contained. In this case, each non-homogeneous asset can be composed of multiple non-homogeneous assets. The main asset can contain one or more sub-assets, and the sub-assets can further contain other sub-assets.   
   
-  For game scenarios with equipment construction or combination, the 1808 Standard provides a design that supports asset portfolios. The extended data contains the zone that records the combination relationship. The zone data records the information of the nested relationship when the asset is combined. Before the relationship is terminated, the ownership of nested child assets will not be able to be transferred.   
+  For game scenarios with equipment construction or combination, the 1808 Standard provides a design that supports asset portfolios. The extended data contains the zone that records the combination relationship. The zone data records the information of the nested relationship when the asset is combined. Before the relationship is terminated, the ownership of nested sub-assets will not be able to be transferred.   
 
 #### Support Complex Design of Circulation Model
 
@@ -112,16 +112,16 @@ Based on BCX contract system, 1808 Standard can easily deliver the business logi
   
   ![P3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3_en.png)
 
-  The figure shows the comparison of the above three non-homogeneous asset standards with NHAS-1808, which briefly compares the essentials that may be involved in blockchain and gaming. The differences marked in red are the features of the 1808 Standard designed by COCOS-BCX for the game running on-chain. These features are related to the data structure design of the 1808 standard assets in addition to the characteristics of the BCX chain network itself.  
+  The figure shows the comparison of the above three non-homogeneous asset standards with COCOS 1808, which briefly compares the essentials that may be involved in blockchain and gaming. The differences marked in red are the features of the 1808 Standard designed by Cocos-BCX for the game running on-chain. These features are related to the data structure design of the 1808 standard assets in addition to the characteristics of the BCX chain network itself.  
 ### Data Structure of 1808 Standard  
 
 ![P4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4_en.png)
 
-  The non-homogeneous digital assets data structure in the blockchain network is divided into fixed data zone and  extensible data area. The fixed data zone stores the basic information of non-homogeneous digital assets, including asset ID, worldview statement and basic data zone; While the extensible data area is a functional section designed for attribute extension of non-homogeneous digital assets, including zone data and combination relationship data.   
+  The non-homogeneous digital assets data structure in the blockchain network is divided into fixed data zone and  extensible data area. The fixed data zone stores the basic information of non-homogeneous digital assets, including asset ID, multiverse statement and basic data zone; While the extensible data area is a functional section designed for attribute extension of non-homogeneous digital assets, including zone data and combination relationship data.   
   
-  The fixed data zone defines asset ID, worldview statement and other basic data. The asset ID is the unique identifier of assets instance in the distributed ledger network, and the unique credential to access, check and modify the assets. Worldview statement, including the worldview ID, the type of game in which the asset is in effect and supported, the world and the currencies supporting the circulation of assets in the network. The basic data includes the asset owner ID, producer ID, production time, basic attributes of the asset (eg, equipment descriptions, etc.)，and further consists of information including a basic description of the assets, production time, producer, owner, user, customized black & white list of use right, etc.   
+  The fixed data zone defines asset ID, multiverse statement and other basic data. The asset ID is the unique identifier of assets instance in the distributed ledger network, and the unique credential to access, check and modify the assets. Multiverse  statement, including the multiverse ID, the type of game in which the asset is in effect and supported, the multiverse and the currencies supporting the circulation of assets in the network. The basic data includes the asset owner ID, producer ID, production time, basic attributes of the asset (eg, equipment descriptions, etc.)，and further consists of information including a basic description of the assets, production time, producer, owner, user, customized black & white list of use right, etc.   
   
-  The extensible data area is a storage area of each business data in the world view supported by the asset, and includes a combined relation data zone and domain data, wherein the combined relation data zone includes two tables for expressing a nested combination relationship between assets; The domain data area is a dedicated data area owned by different business entities in the zone. The data areas between different business entities are isolated from each other, and the domain data is stored in the form of key identifiers of domain identifiers and data.   
+  The extensible data area is a storage area of each business data in the multiverse supported by the asset, and includes a combined relation data zone and domain data, wherein the combined relation data zone includes two tables for expressing a nested combination relationship between assets; The domain data area is a dedicated data area owned by different business entities in the zone. The data areas between different business entities are isolated from each other, and the domain data is stored in the form of key identifiers of domain identifiers and data.   
   
 ### Data Structure Reference of 1808 Standard
 
@@ -130,7 +130,7 @@ Based on BCX contract system, 1808 Standard can easily deliver the business logi
  Name | Basic Identification  | Type
  ---- | ----- | ------  
  assets  id | nh_asset_id | asset_id_type  
- world wiew | world_view | world_view_type  
+ multiverse | world_view | world_view_type  
  owner | nh_asset_owner | account_id_type 
  creator | nh_asset_creator | account_id_type 
  create time | nh_asset_create_time | time_point_sec 
@@ -140,13 +140,13 @@ Based on BCX contract system, 1808 Standard can easily deliver the business logi
 
   `asset_id_type`: The asset_id_type is designed to maintain the uniqueness in the network, which requires little for the ID length. However, from the perspective of multi-network compatibility, the maximum sample size of the ID should cover the maximum expected number of non-homogeneous digital asset instances in the existing decentralized distributed account-based network. For example, if the asset ID in the Ethereum network is a 40-byte hash address and the maximum number of samples that can be supported is 1.462*10^48, hash addresses or other unique identification approaches with a sample size greater than this value is considered when designing the asset ID in the network to which this standard is applied.   
   
-  `world_view`: The world_view_type contains the worldview ID applied to the asset and the world currency corresponding to the worldview, where the Worldview ID is a unique identifier for the network, and the currency in circulation is the unique symbol of the currency (the network using the symbol as a unique credential) or the address (the network using the address as the unique credential).  
+  `world_view`: The world_view field type is world_view_type, it contains the multiverse ID applied to the asset and the currency corresponding to the universe, where the multiverse ID is a unique identifier for the network, and the currency in circulation is the unique symbol of the currency (the network using the symbol as a unique credential) or the address (the network using the address as the unique credential).  
   
-  `nh_asset_owner` and `nh_asset_creator`: The asset_owner and Asset_creator fields type is account_id_type, which should be of a unique and sufficient sample size.   
+  `nh_asset_owner` and `nh_asset_creator`: The nh_asset_owner and nh_asset_creator fields type is account_id_type, which should be of a unique and sufficient sample size.   
   
-  `nh_asset_create_time`: The asset_create_time field type is time_point_sec, which is used to identify the date when this asset instance is created. It is determined by the timestamp of the ledger when the instantiation transaction is completed.   
+  `nh_asset_create_time`: The nh_asset_create_time field type is time_point_sec, which is used to identify the date when this asset instance is created. It is determined by the timestamp of the ledger when the instantiation transaction is completed.   
   
-  `nh_asset_description`: The asset_description field type is a string, which is a piece of data that can be used to express the basic attributes of an asset instance. The data can be processed in a custom parsing or encryption manner to match specific business entities and application scenarios.   
+  `nh_asset_description`: The nh_asset_description field type is a string, which is a piece of data that can be used to express the basic attributes of an asset instance. The data can be processed in a custom parsing or encryption manner to match specific business entities and application scenarios.   
   
   `limit_list`: The limit_list field type is vector<contract_id_type>，which is a list used to controll the scope of use of the asset by being set in whitelist mode or blacklist mode according to the restriction mode specified in limit_type. The zone data of the asset can only be modified in the game added in the list in whitelist mode.  
   
@@ -163,13 +163,13 @@ zone data | session_data | map<string, string>
 inter-zone key | inner_key | string  
 inter-zone value | inner_value| string   
 
-  `Mod_data`: The Mod_data field type is an id list, which is a relationship table consisting of a list of identifiers of parent asset IDs and child asset IDs, which are used to describe the combination and nesting relationship of assets in different business entities.   
+  `mod_data`: The mod_data field type is an id list, which is a relationship table consisting of a list of identifiers of main asset IDs and sub-asset IDs, which are used to describe the combination and nesting relationship of assets in different business entities.   
   
-  `describe_with_contract`: The World_view field type is a map, which is a key-value pair mapping table composed of zone identifiers and zone data. The zone identifier is a type identifier of the business entity, corresponding to one or several contracts, and all data interactions of the business instance for this asset instance will be performed in this zone.   
+  `describe_with_contract`: The describe_with_contract field type is a map, which is a key-value pair mapping table composed of zone identifiers and zone data. The zone identifier is a type identifier of the business entity, corresponding to one or several contracts, and all data interactions of the business instance for this asset instance will be performed in this zone.   
   
-  `Session_key`: The Session_key field type is contract_id_type, which is the id of one or more core contracts that the business should contain. The id should be as unique and sufficient as the other unique identifiers. 
+  `session_key`: The Session_key field type is contract_id_type, which is the id of one or more core contracts that the business should contain. The id should be as unique and sufficient as the other unique identifiers. 
   
-`Session_data`: The session_data field type is a map, which consists of the inner_key and the inner_value. The specific data of the key and value is defined by the business entity responsible for this zone, which may include structured or encrypted strings as its data according to its needs.  
+`session_data`: The session_data field type is a map, which consists of the inner_key and the inner_value. The specific data of the key and value is defined by the business entity responsible for this zone, which may include structured or encrypted strings as its data according to its needs.  
 
 # Non-Homogeneous Digital Assets Standard
 ## The Definition of  Non-Homogeneous Digital Assets
@@ -178,7 +178,7 @@ inter-zone value | inner_value| string
   
   Taking a more realistic asset, Bitcoin, as an example, this typical homogeneous digital asset has no difference and can be replaced with each other. If an account receives a Bitcoin while transferring another one, the balance, as well as the value, will remain the same, which shows other characteristics of homogeneous assets, divisible and combinable.   
   
-  In contrast, with the specific attributes at the beginning of production,non-homogeneous digital assets are unique and cannot be split or simply merged, especially for those under 1808 Standard, for having more complex designs like asset nesting, cross-world traveling and scalable data (see the description on the characteristics of 1808 standard assets).  
+  In contrast, with the specific attributes at the beginning of production,non-homogeneous digital assets are unique and cannot be split or simply merged, especially for those under 1808 Standard, for having more complex designs like asset nesting, cross-universe traveling and scalable data (see the description on the characteristics of 1808 standard assets).  
   
   Making an analogy between "World of Warcraft" and the blockchain, all the props of the former one can be set as non-homogeneous digital assets. When players completing the task, they shall get the legendary equipment "Blessed Blade of the Windseeker", which contains many skills and effects besides the basic values of attack, speed, weight, etc. all can be expressed in the scalable data of non-homogeneous digital assets. If obtained again, the weapons will not be merged but exist as independent asset data despite their same attributes, skills and even descriptions. In addition, the equipment can be sold, exchanged, or destroyed, while its information will always exist independently in a traceable form on the chain.  
   
@@ -206,30 +206,30 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 
   Taking ERC-721 standard as an example, any non-homogeneous digital asset defined by it can be analyzed, retrieved and modified using the same mode of contract/service. When the operating different ERC-721 assets object, the developer does not even need to modify the contract/service code but to change the identification information of the incoming asset instance in the interface call to complete the full compatibility of the new asset.  
 
-# Worldview System
-## Game World and the Worldview System
+# Multiverse System
+## Game Universe and the Multiverse System
 
-  Different from the concept of the traditional game industry, BCX's blockchain games are not completely independent business scenarios. Each blockchain game can be considered a game world, and several game worlds with similar basic settings can be considered to have a common worldview.  
+  Different from the concept of the traditional game industry, BCX's blockchain games are not completely independent business scenarios. Each blockchain game can be considered a game universe, and several game universes with similar basic settings can be considered to have a common multiverse.  
   
 ![P5](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/5_en.png)  
 
-  The concept of worldview is not created by blockchain gaming, but a feature already shared by many modern games. For example, Warcraft, World of Warcraft, Hearthstone, and The Legend of Storm share a common worldview of Blizzard universe, in which a considerable part of game props, characters, and assets are common. Although these assets have a different explanation on specific attributes, skills, etc. in each game, the design of these assets stems from the common basic rules.  
+  The concept of multiverse is not created by blockchain gaming, but a feature already shared by many modern games. For example, Warcraft, World of Warcraft, Hearthstone, and The Legend of Storm share a common multiverse of Blizzard universe, in which a considerable part of game props, characters, and assets are common. Although these assets have a different explanation on specific attributes, skills, etc. in each game, the design of these assets stems from the common basic rules.  
   
-  The worldview of blockchain games is an identity that distinguishes between story settings and characters/items/rules settings and utility scope. Game items follow a unified specification in the worldview, and can be migrated and circulated in different game worlds under this worldview by paying the “migration fee”, which is the “travelling” of game props.  
+  The multiverse of blockchain games is an identity that distinguishes between story settings and characters/items/rules settings and utility scope. Game items follow a unified specification in the multiverse, and can be migrated and circulated in different game universes under this multiverse by paying the “migration fee”, which is the “travelling” of game props.  
 
-## Cross-World Item “Traveling”, Multiverse and Parallel World
+## Cross-Universe Item “Traveling”, Multiverse and Parallel Universes
 
-  Game items are a kind of non-homogeneous digital assets used in blockchain games. The process of items “travelling” across different worlds is that of applying and changing of a non-homogeneous digital asset in different games and services under the same worldview.  
+  Game items are a kind of non-homogeneous digital assets used in blockchain games. The process of items “travelling” across different universes is that of applying and changing of a non-homogeneous digital asset in different games and services under the same multiverse.  
   
-  The 1808 Standard makes it possible for on-chain games to design the multiverse/parallel universe. Different game worldviews are also different game universes, which forms the multiverse of on-chain games. The game items in each universe can be freely circulated, and are written with different attributes, skills, etc. in different games. These items do not affect each other. This is what we mentioned as the item design in the "parallel world".  
+  The 1808 Standard makes it possible for on-chain games to design the multiverse/parallel universes. Different game multiverses are also different game universes, which forms the multiverse of on-chain games. The game items in each universe can be freely circulated, and are written with different attributes, skills, etc. in different games. These items do not affect each other. This is what we mentioned as the item design in the "parallel universes".  
   
-  Scalable custom data enables game designers to create unique game assets. Non-interfering zone data allows game assets to be given new properties that are an immune while "travelling" the world and the universe, while also making it possible of data linkage between games (such as skill gain/reduction). The image below is an example of the on-chain game assets travelling across the world line/parallel world:  
+  Scalable custom data enables game designers to create unique game assets. Non-interfering zone data allows game assets to be given new properties that are an immune while "travelling" the universes and the multiverse, while also making it possible of data linkage between games (such as skill gain/reduction). The image below is an example of the on-chain game assets travelling across the universe line/parallel universes:  
   
 ![P6](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/6_en.png)  
 
-  According to the game operation design, the 1808 non-homogeneous assets standard support the design of paid travelling across the world line through a specific third-party. This is helpful for game operation to meet the needs of item balance and asset circulation control.  
+  According to the game operation design, the 1808 non-homogeneous assets standard support the design of paid travelling across the universe line through a specific third-party. This is helpful for game operation to meet the needs of item balance and asset circulation control.  
   
-## Data Management in the Worldview System
+## Data Management in the Multiverse System
 
   1808 non-homogeneous digital assets standard is defined on chain initially and operated via smart contract. The complicated data structure and combination design of the 1808 Standard makes the design of asset data security more important. Therefore, Cocos-BCX analyzes the risks and potential dangers that may occur during the operation of data on chain, and starts to make improvements.  
 
@@ -245,11 +245,11 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 * Assets Owner Management Mode for Zone Data  
   The zone data is continuously supplemented with the growth of games. The excessively added zone data or the invalid zone data added by the malicious contract will affect the execution efficiency of the business, resulting in asset data redundancy. To avoid this situation, the 1808 Standard allows the user to delete a specific zone in the extended asset data. However, this only gives the user the right to delete the zone data without including the right to change the zone data, in case the user cheats by changing the data.  
 
-# Application Examples of COCOS 1808 Standard and Worldview System
+# Application Examples of 1808 Standard and Multiverse System
 
-  This chapter will describe the operation of contract on BCX-NHAS-1808 standard digital assets, and how the non-homogeneous assets travel and link in different worldviews in Cocos-BCX chain. For more information, please refer to the `Cocos-BCX Smart Contract User Guide`.  
+  This chapter will describe the operation of contract on COCOS 1808 standard digital assets, and how the non-homogeneous assets travel and link in different universes in Cocos-BCX chain. For more information, please refer to the `Cocos-BCX Smart Contract User Guide`.  
   
-## Operation of Contract on COCOS 1808 Standard Digital Asset 
+## Operation of Contract on 1808 Standard Digital Assets 
 ### Transfer of Non-Homogenous Assets Ownership
 #### Transfer of Non-homogenous Assets-Caller
 
@@ -305,14 +305,14 @@ function equipment_upgrade( equipment_id, upgrade_name, target_value, success_ra
  end   
 end 
 ```
-### Game Items Travelling the Game Worlds and Making a Numerical Linkage
+### Game Items Travelling the Game Universe and Making a Numerical Linkage
 
-  This is to introduce an example of the game items travelling the game worlds. In this example scenario, the game service authorizes the player's items to travel into their own game world with a fee.After the player passes the required assets by paying a fee, the game service will allow the player's items to enter the game world (contract system).   
+  This is to introduce an example of the game items travelling the game universe. In this example scenario, the game service authorizes the player's items to travel into their own game universe with a fee. After the player passes the required assets by paying a fee, the game service will allow the player's items to enter the game universe (contract system).   
   
-  The game service collects the required information from the zone data of the player’s items and submits it to the contract. Since there is a linkage with the previous game, the developer designs a linkage with the previous game skills (e.g. the 'eyes of hawk' shown in the following code), so that the items that travel to the game world can be equipped with the skill attributes.  
+  The game service collects the required information from the zone data of the player’s items and submits it to the contract. Since there is a linkage with the previous game, the developer designs a linkage with the previous game skills (e.g. the 'eyes of hawk' shown in the following code), so that the items that travel to the game universe can be equipped with the skill attributes.  
   
 ```lua
-  --Contract function: initialize game items that travel across the game world 
+  --Contract function: initialize game items that travel across the game universe 
   -- item_id: the ID of equipment 
   -- original_skill:the skill info of original game 
   -- add_skill: the added skill in this game 
