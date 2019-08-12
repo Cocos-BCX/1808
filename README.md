@@ -26,8 +26,8 @@
   * [ Game Universe and the Multiverse System](#Game-Universe-and-the-Multiverse-System)
   * [Cross-Universe Item “Traveling”, Multiverse and Parallel Universes](#Cross-Universe-Item-Traveling-Multiverse-and-Parallel-Universes)
   * [Data Management in the Multiverse System](#Data-Management-in-the-Multiverse-System)
-- [Application Examples of COCOS 1808 Standard and Multiverse System](#Application-Examples-of-COCOS-1808-Standard-and-Multiverse-System)
-  * [Operation of Contract on COCOS 1808 Standard Digital Assets](#Operation-of-Contract-on-COCOS-1808-Standard-Digital-Assets)
+- [Application Examples of 1808 Standard and Multiverse System](#Application-Examples-of-1808-Standard-and-Multiverse-System)
+  * [Operation of Contract on 1808 Standard Digital Assets](#Operation-of-Contract-on-1808-Standard-Digital-Assets)
     + [Transfer of Non-Homogenous Assets Ownership](#Transfer-of-Non-Homogenous-Assets-Ownership)
       - [Transfer of Non-Homogenous Assets-Caller](#Transfer-of-Non-Homogenous-Assets-Caller)
       - [Transfer of Non-Homogenous Assets-Owner](#Transfer-of-Non-Homogenous-Assets-Owner)
@@ -54,7 +54,7 @@
 
 ## COCOS 1808 Standard
 
-   Combining the needs of gaming industry, we reviewed a number of existing non-homogeneous digital asset standards and defined BCX-NHAS-1808 to be the one to standardize all non-homogeneous digital assets that published and circulated on the BCX chain.  
+   Combining the needs of gaming industry, we reviewed a number of existing non-homogeneous digital asset standards and defined COCOS 1808 to be the one to standardize all non-homogeneous digital assets that published and circulated on the BCX chain.  
 
 ### Features
 #### Universally Used Unique Value Expression
@@ -112,7 +112,7 @@ Based on BCX contract system, 1808 Standard can easily deliver the business logi
   
   ![P3](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/3_en.png)
 
-  The figure shows the comparison of the above three non-homogeneous asset standards with NHAS-1808, which briefly compares the essentials that may be involved in blockchain and gaming. The differences marked in red are the features of the 1808 Standard designed by Cocos-BCX for the game running on-chain. These features are related to the data structure design of the 1808 standard assets in addition to the characteristics of the BCX chain network itself.  
+  The figure shows the comparison of the above three non-homogeneous asset standards with COCOS 1808, which briefly compares the essentials that may be involved in blockchain and gaming. The differences marked in red are the features of the 1808 Standard designed by Cocos-BCX for the game running on-chain. These features are related to the data structure design of the 1808 standard assets in addition to the characteristics of the BCX chain network itself.  
 ### Data Structure of 1808 Standard  
 
 ![P4](https://github.com/Cocos-BCX/1808/blob/master/readmeimg/4_en.png)
@@ -245,11 +245,11 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 * Assets Owner Management Mode for Zone Data  
   The zone data is continuously supplemented with the growth of games. The excessively added zone data or the invalid zone data added by the malicious contract will affect the execution efficiency of the business, resulting in asset data redundancy. To avoid this situation, the 1808 Standard allows the user to delete a specific zone in the extended asset data. However, this only gives the user the right to delete the zone data without including the right to change the zone data, in case the user cheats by changing the data.  
 
-# Application Examples of COCOS 1808 Standard and Multiverse System
+# Application Examples of 1808 Standard and Multiverse System
 
-  This chapter will describe the operation of contract on BCX-NHAS-1808 standard digital assets, and how the non-homogeneous assets travel and link in different universes in Cocos-BCX chain. For more information, please refer to the `Cocos-BCX Smart Contract User Guide`.  
+  This chapter will describe the operation of contract on COCOS 1808 standard digital assets, and how the non-homogeneous assets travel and link in different universes in Cocos-BCX chain. For more information, please refer to the `Cocos-BCX Smart Contract User Guide`.  
   
-## Operation of Contract on COCOS 1808 Standard Digital Asset 
+## Operation of Contract on 1808 Standard Digital Asset 
 ### Transfer of Non-Homogenous Assets Ownership
 #### Transfer of Non-homogenous Assets-Caller
 
