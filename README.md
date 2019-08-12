@@ -249,7 +249,7 @@ It can be argued that a well-defined standardized non-homogeneous digital asset 
 
   This chapter will describe the operation of contract on COCOS 1808 standard digital assets, and how the non-homogeneous assets travel and link in different universes in Cocos-BCX chain. For more information, please refer to the `Cocos-BCX Smart Contract User Guide`.  
   
-## Operation of Contract on 1808 Standard Digital Asset 
+## Operation of Contract on 1808 Standard Digital Assets 
 ### Transfer of Non-Homogenous Assets Ownership
 #### Transfer of Non-homogenous Assets-Caller
 
